@@ -32,17 +32,16 @@ namespace UP._01._01.Pages
             BookBox.ItemsSource = null;
             BookBox.ItemsSource = book;
         }
-        private void Poisc_TextChanged(object sender, SelectionChangedEventArgs e)
+        private void Poisc_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if if (string.IsNullOrWhiteSpace(Poisc.Text))
-                {
+            if(string.IsNullOrWhiteSpace(Poisc.Text))
+            {
                 BookBox.ItemsSource = book;
             }
             else
             {
-                //Sort.SelectedValue  использовать в LINQ
-                BookBox.ItemsSource = book.Where(d => d.name.ToLower().Contains(Poisc.Text.ToLower())).ToList();
-                }
+                BookBox.ItemsSource = book.Where(d => d.Name.ToLower().Contains(Poisc.Text.ToLower())).ToList();
+            }
 
         }
     }
