@@ -27,7 +27,25 @@ namespace UP._01._01.Pages
 
         private void Regist_Click(object sender, RoutedEventArgs e)
         {
-
+            User newUser = new User
+            {
+                Name = Name.Text,
+                Login = Login.Text,
+                Password = Password.Text,
+                Email = Email.Text,
+                IdRole = 3,
+                Freez = false
+            };
+            Core.Context.User.Add(newUser);
+            Core.Context.SaveChanges();
+            User reguser = newUser;
+            AffUser.Auser = reguser;
+            MessageBox.Show("Вы зарегистрировались!");
+            NavigationService.Navigate(new PageProf());
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
         }
     }
 }
