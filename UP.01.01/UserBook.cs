@@ -12,13 +12,15 @@ namespace UP._01._01
     using System;
     using System.Collections.Generic;
     
-    public partial class Book_Gener
+    public partial class UserBook
     {
         public int Id { get; set; }
+        public int IdUser { get; set; }
         public int IdBook { get; set; }
-        public int IdGener { get; set; }
+        public Nullable<int> IdStatus { get; set; }
     
-        public virtual Gener Gener { get; set; }
         public virtual Book Book { get; set; }
+        public virtual Status Status { get; set; }
+        public virtual User User { get; set; }
     }
 }

@@ -22,8 +22,8 @@ namespace UP._01._01
             this.Review = new HashSet<Review>();
             this.Review1 = new HashSet<Review>();
             this.Applications = new HashSet<Applications>();
-            this.User_Book = new HashSet<User_Book>();
             this.Book = new HashSet<Book>();
+            this.UserBook = new HashSet<UserBook>();
         }
     
         public int Id { get; set; }
@@ -46,8 +46,8 @@ namespace UP._01._01
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Applications> Applications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User_Book> User_Book { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Book> Book { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserBook> UserBook { get; set; }
     }
 }

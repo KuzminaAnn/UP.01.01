@@ -17,13 +17,13 @@ namespace UP._01._01
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Gener()
         {
-            this.Book_Gener = new HashSet<Book_Gener>();
+            this.BookGener = new HashSet<BookGener>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Book_Gener> Book_Gener { get; set; }
+        public virtual ICollection<BookGener> BookGener { get; set; }
     }
 }

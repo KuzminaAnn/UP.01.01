@@ -70,7 +70,7 @@
     <Compile Include="Book.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Book_Gener.cs">
+    <Compile Include="BookGener.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Complaint.cs">
@@ -106,7 +106,7 @@
     <Compile Include="User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="User_Book.cs">
+    <Compile Include="UserBook.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Page Include="Dictionary.xaml">

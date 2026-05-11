@@ -32,9 +32,9 @@ namespace UP._01._01
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<User_Book> User_Book { get; set; }
         public virtual DbSet<Applications> Applications { get; set; }
-        public virtual DbSet<Book_Gener> Book_Gener { get; set; }
         public virtual DbSet<Book> Book { get; set; }
+        public virtual DbSet<UserBook> UserBook { get; set; }
+        public virtual DbSet<BookGener> BookGener { get; set; }
     }
 }

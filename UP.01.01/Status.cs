@@ -17,13 +17,13 @@ namespace UP._01._01
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Status()
         {
-            this.User_Book = new HashSet<User_Book>();
+            this.UserBook = new HashSet<UserBook>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User_Book> User_Book { get; set; }
+        public virtual ICollection<UserBook> UserBook { get; set; }
     }
 }
