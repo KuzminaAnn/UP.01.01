@@ -20,9 +20,33 @@ namespace UP._01._01.Pages
     /// </summary>
     public partial class PageAffuser : Page
     {
+        List<User> users = Core.Context.User.ToList();
         public PageAffuser()
         {
             InitializeComponent();
+
+        }
+
+        private void Aff_Click(object sender, RoutedEventArgs e)
+        {
+            User afuser = users.First(U => U.Login.ToLower() == login.Text.ToLower());
+
+            string password = Password.Password;
+            if (afuser.Password == password)
+            {
+                AffUser.Auser = afuser;
+                MessageBox.Show("Вы вошли в свой аккаунт!");
+                NavigationService.Navigate(new PageProf());
+                if (NavigationService.CanGoForward)
+                {
+                    NavigationService.GoForward();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Неверный пароль");
+
+            }
         }
     }
 }

@@ -27,7 +27,7 @@
             <TextBlock Text="Введите пароль:" Margin="5" FontSize="25" VerticalAlignment="Center"/>
             <PasswordBox x:Name="Password" Margin="5, 20" FontSize="25" Height="30" Width="250" />
         </StackPanel>
-        <Button x:Name="Aff" Grid.Row="3" Content="Войти" FontSize="25" Height="40" Width="100"/>
+        <Button x:Name="Aff" Grid.Row="3" Content="Войти" FontSize="25" Height="40" Width="100" Click="Aff_Click"/>
         <StackPanel Grid.Row="4" Orientation="Vertical" HorizontalAlignment="Center" Margin="25">
             <TextBlock Text="Нет аккаунта?" Margin="5" FontSize="20" VerticalAlignment="Center"/>
             <Button x:Name="Registr" Content="Регистрация" FontSize="20"/>
