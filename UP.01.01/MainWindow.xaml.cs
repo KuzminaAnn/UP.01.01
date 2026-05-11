@@ -1,18 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using UP._01._01.Pages;
+﻿using System.Windows;
 
 namespace UP._01._01
 {
@@ -21,7 +7,7 @@ namespace UP._01._01
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,6 +18,7 @@ namespace UP._01._01
             navframe.Visibility = Visibility.Visible;
             navframe1.Visibility = Visibility.Hidden;
             navframe2.Visibility = Visibility.Hidden;
+            navframe3.Visibility = Visibility.Hidden;
         }
 
         private void BookSpesk_Click(object sender, RoutedEventArgs e)
@@ -39,13 +26,26 @@ namespace UP._01._01
             navframe1.Visibility = Visibility.Visible;
             navframe.Visibility = Visibility.Hidden;
             navframe2.Visibility = Visibility.Hidden;
+            navframe3.Visibility = Visibility.Hidden;
         }
 
         private void UserProf_Click(object sender, RoutedEventArgs e)
         {
-            navframe2.Visibility = Visibility.Visible;
-            navframe.Visibility = Visibility.Hidden;
-            navframe1.Visibility = Visibility.Hidden;
+            if (AffUser.Auser == null)
+            {
+                navframe3.Visibility = Visibility.Visible;
+                navframe2.Visibility = Visibility.Hidden;
+                navframe.Visibility = Visibility.Hidden;
+                navframe1.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                navframe2.Visibility = Visibility.Visible;
+                navframe.Visibility = Visibility.Hidden;
+                navframe1.Visibility = Visibility.Hidden;
+                navframe3.Visibility = Visibility.Hidden;
+            }
+
         }
     }
 }
