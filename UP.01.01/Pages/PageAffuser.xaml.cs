@@ -48,5 +48,14 @@ namespace UP._01._01.Pages
 
             }
         }
+
+        private void Registr_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageReg());
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
+        }
     }
 }

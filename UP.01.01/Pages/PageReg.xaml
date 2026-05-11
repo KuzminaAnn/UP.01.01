@@ -1,0 +1,42 @@
+﻿<Page x:Class="UP._01._01.Pages.PageReg"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UP._01._01.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageReg">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Регистрация" Grid.Row="0" FontSize="50" HorizontalAlignment="Center" Margin="10"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Введите имя:" Margin="5" FontSize="25" VerticalAlignment="Center"/>
+            <TextBox x:Name="Name" Margin="5, 20" FontSize="25" Height="30" Width="250"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Введите логин:" Margin="5" FontSize="25" VerticalAlignment="Center"/>
+            <TextBox x:Name="Login" Margin="5, 20" FontSize="25" Height="30" Width="250"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Введите пароль:" Margin="5" FontSize="25" VerticalAlignment="Center"/>
+            <TextBox x:Name="Password" Margin="5, 20" FontSize="25" Height="30" Width="250"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Введите почту:" Margin="5" FontSize="25" VerticalAlignment="Center"/>
+            <TextBox x:Name="Email" Margin="5, 20" FontSize="25" Height="30" Width="250"/>
+        </StackPanel>
+        <Button x:Name="Regist" Content="Регистрация" Grid.Row="5" FontSize="30" Height="45" Width="200" Click="Regist_Click"/>
+
+    </Grid>
+</Page>

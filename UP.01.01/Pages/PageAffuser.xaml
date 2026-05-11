@@ -30,7 +30,7 @@
         <Button x:Name="Aff" Grid.Row="3" Content="Войти" FontSize="25" Height="40" Width="100" Click="Aff_Click"/>
         <StackPanel Grid.Row="4" Orientation="Vertical" HorizontalAlignment="Center" Margin="25">
             <TextBlock Text="Нет аккаунта?" Margin="5" FontSize="20" VerticalAlignment="Center"/>
-            <Button x:Name="Registr" Content="Регистрация" FontSize="20"/>
+            <Button x:Name="Registr" Content="Регистрация" FontSize="20" Click="Registr_Click"/>
         </StackPanel>
     </Grid>
 </Page>
