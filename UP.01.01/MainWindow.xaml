@@ -31,7 +31,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="UserProf" Width="60" Height="50" Margin="2">
+            <Button x:Name="UserProf" Width="60" Height="50" Margin="2" Click="UserProf_Click">
                 <Image Source="/icoon/prof.png"/>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -68,6 +68,7 @@
 
         <Frame x:Name="navframe" Grid.Column="1" Source="Pages/PageStart.xaml" NavigationUIVisibility="Hidden" Background="#F4F7F7" Visibility="Visible"/>
         <Frame x:Name="navframe1" Grid.Column="1" Source="Pages/PageSpesk.xaml" NavigationUIVisibility="Hidden" Background="#F4F7F7" Visibility="Hidden"/>
+        <Frame x:Name="navframe2" Grid.Column="1" Source="Pages/PageProf.xaml" NavigationUIVisibility="Hidden" Background="#F4F7F7" Visibility="Hidden"/>
 
     </Grid>
 </Window>

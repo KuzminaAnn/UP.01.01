@@ -25,7 +25,6 @@ namespace UP._01._01
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<Complaint> Complaint { get; set; }
         public virtual DbSet<Gener> Gener { get; set; }
         public virtual DbSet<Review> Review { get; set; }
@@ -36,5 +35,6 @@ namespace UP._01._01
         public virtual DbSet<User_Book> User_Book { get; set; }
         public virtual DbSet<Applications> Applications { get; set; }
         public virtual DbSet<Book_Gener> Book_Gener { get; set; }
+        public virtual DbSet<Book> Book { get; set; }
     }
 }

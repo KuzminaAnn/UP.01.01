@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище kuza_upModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище kuza_upModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "kuza_up.dbo.Applications" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="Applications">
@@ -363,28 +363,10 @@
             <End Role="User-Book" EntitySet="User-Book" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="kuza_upModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Book">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdAuthor" Type="Int32" Nullable="false" />
-          <Property Name="Rating" Type="Double" Nullable="false" />
-          <Property Name="Freez" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Book_User" FromRole="Book" ToRole="User" />
-          <NavigationProperty Name="Book_Gener" Relationship="Self.FK_Book_Gener_Book" FromRole="Book" ToRole="Book_Gener" />
-          <NavigationProperty Name="Complaint" Relationship="Self.FK_Complaint_Book" FromRole="Book" ToRole="Complaint" />
-          <NavigationProperty Name="Review" Relationship="Self.FK_Review_Book" FromRole="Book" ToRole="Review" />
-          <NavigationProperty Name="User_Book" Relationship="Self.FK_User_Book_Book" FromRole="Book" ToRole="User_Book" />
-        </EntityType>
         <EntityType Name="Complaint">
           <Key>
             <PropertyRef Name="Id" />
@@ -394,9 +376,9 @@
           <Property Name="IdAuthor" Type="Int32" />
           <Property Name="IdBook" Type="Int32" />
           <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Book" Relationship="Self.FK_Complaint_Book" FromRole="Complaint" ToRole="Book" />
           <NavigationProperty Name="User" Relationship="Self.FK_Complaint_User" FromRole="Complaint" ToRole="User" />
           <NavigationProperty Name="User1" Relationship="Self.FK_Complaint_User1" FromRole="Complaint" ToRole="User" />
+          <NavigationProperty Name="Book" Relationship="kuza_upModel.FK_Complaint_Book" FromRole="Complaint" ToRole="Book" />
         </EntityType>
         <EntityType Name="Gener">
           <Key>
@@ -416,9 +398,9 @@
           <Property Name="IdBook" Type="Int32" />
           <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Rating" Type="Double" />
-          <NavigationProperty Name="Book" Relationship="Self.FK_Review_Book" FromRole="Review" ToRole="Book" />
           <NavigationProperty Name="User" Relationship="Self.FK_Review_User" FromRole="Review" ToRole="User" />
           <NavigationProperty Name="User1" Relationship="Self.FK_Review_User1" FromRole="Review" ToRole="User" />
+          <NavigationProperty Name="Book" Relationship="kuza_upModel.FK_Review_Book" FromRole="Review" ToRole="Book" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -457,7 +439,6 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdRole" Type="Int32" Nullable="false" />
           <Property Name="Freez" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Book" Relationship="Self.FK_Book_User" FromRole="User" ToRole="Book" />
           <NavigationProperty Name="Complaint" Relationship="Self.FK_Complaint_User" FromRole="User" ToRole="Complaint" />
           <NavigationProperty Name="Complaint1" Relationship="Self.FK_Complaint_User1" FromRole="User" ToRole="Complaint" />
           <NavigationProperty Name="Review" Relationship="Self.FK_Review_User" FromRole="User" ToRole="Review" />
@@ -465,6 +446,7 @@
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="Applications" Relationship="Self.FK_Applications_User" FromRole="User" ToRole="Applications" />
           <NavigationProperty Name="User_Book" Relationship="Self.FK_User_Book_User" FromRole="User" ToRole="User_Book" />
+          <NavigationProperty Name="Book" Relationship="kuza_upModel.FK_Book_User" FromRole="User" ToRole="Book" />
         </EntityType>
         <EntityType Name="User_Book">
           <Key>
@@ -474,9 +456,9 @@
           <Property Name="IdUser" Type="Int32" Nullable="false" />
           <Property Name="IdBook" Type="Int32" Nullable="false" />
           <Property Name="IdStatus" Type="Int32" />
-          <NavigationProperty Name="Book" Relationship="Self.FK_User_Book_Book" FromRole="User_Book" ToRole="Book" />
           <NavigationProperty Name="Status" Relationship="Self.FK_User_Book_Status" FromRole="User_Book" ToRole="Status" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Book_User" FromRole="User_Book" ToRole="User" />
+          <NavigationProperty Name="Book" Relationship="kuza_upModel.FK_User_Book_Book" FromRole="User_Book" ToRole="Book" />
         </EntityType>
         <EntityType Name="Applications">
           <Key>
@@ -498,69 +480,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdBook" Type="Int32" Nullable="false" />
           <Property Name="IdGener" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Book" Relationship="Self.FK_Book_Gener_Book" FromRole="Book_Gener" ToRole="Book" />
           <NavigationProperty Name="Gener" Relationship="Self.FK_Book_Gener_Gener" FromRole="Book_Gener" ToRole="Gener" />
+          <NavigationProperty Name="Book" Relationship="kuza_upModel.FK_Book_Gener_Book" FromRole="Book_Gener" ToRole="Book" />
         </EntityType>
-        <Association Name="FK_Book_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="Book" Type="Self.Book" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Book">
-              <PropertyRef Name="IdAuthor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Book_Gener_Book">
-          <End Role="Book" Type="Self.Book" Multiplicity="1" />
-          <End Role="Book_Gener" Type="Self.Book_Gener" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Book">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Book_Gener">
-              <PropertyRef Name="IdBook" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Complaint_Book">
-          <End Role="Book" Type="Self.Book" Multiplicity="0..1" />
-          <End Role="Complaint" Type="Self.Complaint" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Book">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Complaint">
-              <PropertyRef Name="IdBook" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Review_Book">
-          <End Role="Book" Type="Self.Book" Multiplicity="0..1" />
-          <End Role="Review" Type="Self.Review" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Book">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Review">
-              <PropertyRef Name="IdBook" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_Book_Book">
-          <End Role="Book" Type="Self.Book" Multiplicity="1" />
-          <End Role="User_Book" Type="Self.User_Book" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Book">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="User_Book">
-              <PropertyRef Name="IdBook" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Complaint_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Complaint" Type="Self.Complaint" Multiplicity="*" />
@@ -670,7 +592,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="kuza_upEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Book" EntityType="Self.Book" />
           <EntitySet Name="Complaint" EntityType="Self.Complaint" />
           <EntitySet Name="Gener" EntityType="Self.Gener" />
           <EntitySet Name="Review" EntityType="Self.Review" />
@@ -681,26 +602,6 @@
           <EntitySet Name="User_Book" EntityType="Self.User_Book" />
           <EntitySet Name="Applications" EntityType="Self.Applications" />
           <EntitySet Name="Book_Gener" EntityType="Self.Book_Gener" />
-          <AssociationSet Name="FK_Book_User" Association="Self.FK_Book_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Book" EntitySet="Book" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Book_Gener_Book" Association="Self.FK_Book_Gener_Book">
-            <End Role="Book" EntitySet="Book" />
-            <End Role="Book_Gener" EntitySet="Book_Gener" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Complaint_Book" Association="Self.FK_Complaint_Book">
-            <End Role="Book" EntitySet="Book" />
-            <End Role="Complaint" EntitySet="Complaint" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Review_Book" Association="Self.FK_Review_Book">
-            <End Role="Book" EntitySet="Book" />
-            <End Role="Review" EntitySet="Review" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Book_Book" Association="Self.FK_User_Book_Book">
-            <End Role="Book" EntitySet="Book" />
-            <End Role="User_Book" EntitySet="User_Book" />
-          </AssociationSet>
           <AssociationSet Name="FK_Complaint_User" Association="Self.FK_Complaint_User">
             <End Role="User" EntitySet="User" />
             <End Role="Complaint" EntitySet="Complaint" />
@@ -737,26 +638,111 @@
             <End Role="User" EntitySet="User" />
             <End Role="User_Book" EntitySet="User_Book" />
           </AssociationSet>
+          <EntitySet Name="Book" EntityType="kuza_upModel.Book" />
+          <AssociationSet Name="FK_Book_User" Association="kuza_upModel.FK_Book_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Book" EntitySet="Book" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Book_Gener_Book" Association="kuza_upModel.FK_Book_Gener_Book">
+            <End Role="Book" EntitySet="Book" />
+            <End Role="Book_Gener" EntitySet="Book_Gener" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Complaint_Book" Association="kuza_upModel.FK_Complaint_Book">
+            <End Role="Book" EntitySet="Book" />
+            <End Role="Complaint" EntitySet="Complaint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Review_Book" Association="kuza_upModel.FK_Review_Book">
+            <End Role="Book" EntitySet="Book" />
+            <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Book_Book" Association="kuza_upModel.FK_User_Book_Book">
+            <End Role="Book" EntitySet="Book" />
+            <End Role="User_Book" EntitySet="User_Book" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdAuthor" Type="Int32" Nullable="false" />
+          <Property Name="Rating" Type="Double" Nullable="false" />
+          <Property Name="Freez" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="kuza_upModel.FK_Book_User" FromRole="Book" ToRole="User" />
+          <NavigationProperty Name="Book_Gener" Relationship="kuza_upModel.FK_Book_Gener_Book" FromRole="Book" ToRole="Book_Gener" />
+          <NavigationProperty Name="Complaint" Relationship="kuza_upModel.FK_Complaint_Book" FromRole="Book" ToRole="Complaint" />
+          <NavigationProperty Name="Review" Relationship="kuza_upModel.FK_Review_Book" FromRole="Book" ToRole="Review" />
+          <NavigationProperty Name="User_Book" Relationship="kuza_upModel.FK_User_Book_Book" FromRole="Book" ToRole="User_Book" />
+        </EntityType>
+        <Association Name="FK_Book_User">
+          <End Type="kuza_upModel.User" Role="User" Multiplicity="1" />
+          <End Type="kuza_upModel.Book" Role="Book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Book">
+              <PropertyRef Name="IdAuthor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Book_Gener_Book">
+          <End Type="kuza_upModel.Book" Role="Book" Multiplicity="1" />
+          <End Type="kuza_upModel.Book_Gener" Role="Book_Gener" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Book_Gener">
+              <PropertyRef Name="IdBook" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Complaint_Book">
+          <End Type="kuza_upModel.Book" Role="Book" Multiplicity="0..1" />
+          <End Type="kuza_upModel.Complaint" Role="Complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Complaint">
+              <PropertyRef Name="IdBook" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Review_Book">
+          <End Type="kuza_upModel.Book" Role="Book" Multiplicity="0..1" />
+          <End Type="kuza_upModel.Review" Role="Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="IdBook" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Book_Book">
+          <End Type="kuza_upModel.Book" Role="Book" Multiplicity="1" />
+          <End Type="kuza_upModel.User_Book" Role="User_Book" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User_Book">
+              <PropertyRef Name="IdBook" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище kuza_upModelContainer" CdmEntityContainer="kuza_upEntities">
-          <EntitySetMapping Name="Book">
-            <EntityTypeMapping TypeName="kuza_upModel.Book">
-              <MappingFragment StoreEntitySet="Book">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="IdAuthor" ColumnName="IdAuthor" />
-                <ScalarProperty Name="Rating" ColumnName="Rating" />
-                <ScalarProperty Name="Freez" ColumnName="Freez" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Complaint">
             <EntityTypeMapping TypeName="kuza_upModel.Complaint">
               <MappingFragment StoreEntitySet="Complaint">
@@ -853,6 +839,19 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdBook" ColumnName="IdBook" />
                 <ScalarProperty Name="IdGener" ColumnName="IdGener" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Book">
+            <EntityTypeMapping TypeName="kuza_upModel.Book">
+              <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="Freez" ColumnName="Freez" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="IdAuthor" ColumnName="IdAuthor" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

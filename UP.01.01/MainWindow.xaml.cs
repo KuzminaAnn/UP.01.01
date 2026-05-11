@@ -29,14 +29,23 @@ namespace UP._01._01
 
         private void MainBook_Click(object sender, RoutedEventArgs e)
         {
-            navframe1.Visibility = Visibility.Hidden;
             navframe.Visibility = Visibility.Visible;
+            navframe1.Visibility = Visibility.Hidden;
+            navframe2.Visibility = Visibility.Hidden;
         }
 
         private void BookSpesk_Click(object sender, RoutedEventArgs e)
         {
             navframe1.Visibility = Visibility.Visible;
             navframe.Visibility = Visibility.Hidden;
+            navframe2.Visibility = Visibility.Hidden;
+        }
+
+        private void UserProf_Click(object sender, RoutedEventArgs e)
+        {
+            navframe2.Visibility = Visibility.Visible;
+            navframe.Visibility = Visibility.Hidden;
+            navframe1.Visibility = Visibility.Hidden;
         }
     }
 }

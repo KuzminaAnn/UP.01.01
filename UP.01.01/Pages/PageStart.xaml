@@ -9,11 +9,39 @@
       Title="PageStart">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="60"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
 
-        <TextBlock Text="Читай, Пиши и не спиши" FontSize="35" FontWeight="Medium" Grid.Column="1"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Читай, Пиши и не спиши" FontSize="35" FontWeight="Medium" Grid.Row="0" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <ComboBox x:Name="Sort" Height="30" Width="115" Margin="10" HorizontalAlignment="Left"/>
+            <TextBox x:Name="Poisc" FontSize="20" Foreground="#1F4E5F" Margin="10" Background="White" Height="30" Width="490" HorizontalAlignment="Center" TextChanged="Poisc_TextChanged"/>
+            <ComboBox x:Name="Filtr" Height="30" Width="115" Margin="10" HorizontalAlignment="Right"/>
+        </StackPanel>
+
+        <ListBox x:Name="BookBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel Margin="25, 15" Orientation="Vertical">
+                        <Image Height="300" Width="250" Source="{Binding Image}"/>
+                        <StackPanel Margin="5" HorizontalAlignment="Center" Width="250">
+                            <TextBlock TextWrapping="NoWrap" Text="{Binding Name}" FontSize="20"/>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding User.Name}" FontSize="15"/>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
+                        </StackPanel>
+                        <Button x:Name="Podrob" Content="Подробнее" Width="130" Height="40" FontSize="20"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </Page>

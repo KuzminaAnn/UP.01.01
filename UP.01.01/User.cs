@@ -17,13 +17,13 @@ namespace UP._01._01
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Book = new HashSet<Book>();
             this.Complaint = new HashSet<Complaint>();
             this.Complaint1 = new HashSet<Complaint>();
             this.Review = new HashSet<Review>();
             this.Review1 = new HashSet<Review>();
             this.Applications = new HashSet<Applications>();
             this.User_Book = new HashSet<User_Book>();
+            this.Book = new HashSet<Book>();
         }
     
         public int Id { get; set; }
@@ -34,8 +34,6 @@ namespace UP._01._01
         public int IdRole { get; set; }
         public bool Freez { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Book> Book { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Complaint> Complaint { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -49,5 +47,7 @@ namespace UP._01._01
         public virtual ICollection<Applications> Applications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User_Book> User_Book { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Book> Book { get; set; }
     }
 }

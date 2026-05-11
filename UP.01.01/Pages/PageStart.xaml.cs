@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,29 @@ namespace UP._01._01.Pages
     /// </summary>
     public partial class PageStart : Page
     {
+        List<Book> book = Core.Context.Book.ToList();
         public PageStart()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+            BookBox.ItemsSource = null;
+            BookBox.ItemsSource = book;
+        }
+        private void Poisc_TextChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if if (string.IsNullOrWhiteSpace(Poisc.Text))
+                {
+                BookBox.ItemsSource = book;
+            }
+            else
+            {
+                //Sort.SelectedValue  использовать в LINQ
+                BookBox.ItemsSource = book.Where(d => d.name.ToLower().Contains(Poisc.Text.ToLower())).ToList();
+                }
+
         }
     }
 }

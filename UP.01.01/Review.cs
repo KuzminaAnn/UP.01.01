@@ -21,8 +21,8 @@ namespace UP._01._01
         public string Text { get; set; }
         public Nullable<double> Rating { get; set; }
     
-        public virtual Book Book { get; set; }
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }
+        public virtual Book Book { get; set; }
     }
 }

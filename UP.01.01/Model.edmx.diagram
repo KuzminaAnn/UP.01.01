@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c2f83ea9daeb4573ba74afe6753024bf" Name="Diagram1">
-        <EntityTypeShape EntityType="kuza_upModel.Book" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="kuza_upModel.Complaint" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="kuza_upModel.Gener" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="kuza_upModel.Review" Width="1.5" PointX="10.5" PointY="7" IsExpanded="true" />
@@ -16,11 +15,6 @@
         <EntityTypeShape EntityType="kuza_upModel.User_Book" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="kuza_upModel.Applications" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="kuza_upModel.Book_Gener" Width="1.5" PointX="10.5" PointY="3.5" IsExpanded="true" />
-        <AssociationConnector Association="kuza_upModel.FK_Book_User" ManuallyRouted="false" />
-        <AssociationConnector Association="kuza_upModel.FK_Book_Gener_Book" ManuallyRouted="false" />
-        <AssociationConnector Association="kuza_upModel.FK_Complaint_Book" ManuallyRouted="false" />
-        <AssociationConnector Association="kuza_upModel.FK_Review_Book" ManuallyRouted="false" />
-        <AssociationConnector Association="kuza_upModel.FK_User_Book_Book" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel.FK_Complaint_User" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel.FK_Complaint_User1" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel.FK_Book_Gener_Gener" ManuallyRouted="false" />
@@ -30,6 +24,12 @@
         <AssociationConnector Association="kuza_upModel.FK_User_Book_Status" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel.FK_Applications_User" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel.FK_User_Book_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="kuza_upModel.Book" Width="1.5" PointX="5.25" PointY="13.125" />
+        <AssociationConnector Association="kuza_upModel.FK_Book_User" />
+        <AssociationConnector Association="kuza_upModel.FK_Book_Gener_Book" />
+        <AssociationConnector Association="kuza_upModel.FK_Complaint_Book" />
+        <AssociationConnector Association="kuza_upModel.FK_Review_Book" />
+        <AssociationConnector Association="kuza_upModel.FK_User_Book_Book" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -18,7 +18,7 @@ namespace UP._01._01
         public int IdBook { get; set; }
         public int IdGener { get; set; }
     
-        public virtual Book Book { get; set; }
         public virtual Gener Gener { get; set; }
+        public virtual Book Book { get; set; }
     }
 }
