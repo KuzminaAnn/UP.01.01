@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UP._01._01.Pages;
 
 namespace UP._01._01
 {
@@ -20,9 +21,22 @@ namespace UP._01._01
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void MainBook_Click(object sender, RoutedEventArgs e)
+        {
+            navframe1.Visibility = Visibility.Hidden;
+            navframe.Visibility = Visibility.Visible;
+        }
+
+        private void BookSpesk_Click(object sender, RoutedEventArgs e)
+        {
+            navframe1.Visibility = Visibility.Visible;
+            navframe.Visibility = Visibility.Hidden;
         }
     }
 }

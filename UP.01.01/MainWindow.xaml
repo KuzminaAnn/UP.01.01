@@ -7,10 +7,67 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Frame Grid.Row="1" Source="Pages/PageStart.xaml" NavigationUIVisibility="Hidden"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/icoon/main.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0, 10, 0, 0"/>
+
+        <ListBox x:Name="sidebar" Grid.Column="0" BorderThickness="0" Margin="0, 90, 0, 60">
+            <Button x:Name="MainBook" Width="60" Height="50" Margin="2" Click="MainBook_Click">
+                <Image Source="/icoon/book.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="BookSpesk" Width="60" Height="50" Margin="2" Click="BookSpesk_Click">
+                <Image Source="/icoon/spesk.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="UserProf" Width="60" Height="50" Margin="2">
+                <Image Source="/icoon/prof.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="Admin" Width="60" Height="50" Margin="2" Visibility="Collapsed">
+                <Image Source="/icoon/admin.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="Autor" Width="60" Height="50" Margin="2" Visibility="Collapsed">
+                <Image Source="/icoon/autor.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="Freez" Width="60" Height="50" Margin="2" Visibility="Collapsed">
+                <Image Source="/icoon/error.png"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            
+        </ListBox>
+
+        <Frame x:Name="navframe" Grid.Column="1" Source="Pages/PageStart.xaml" NavigationUIVisibility="Hidden" Background="#F4F7F7" Visibility="Visible"/>
+        <Frame x:Name="navframe1" Grid.Column="1" Source="Pages/PageSpesk.xaml" NavigationUIVisibility="Hidden" Background="#F4F7F7" Visibility="Hidden"/>
+
     </Grid>
 </Window>

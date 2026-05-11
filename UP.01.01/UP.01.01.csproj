@@ -85,6 +85,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageSpesk.xaml.cs">
+      <DependentUpon>PageSpesk.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Review.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PageSpesk.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageStart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -190,6 +197,13 @@
     <Resource Include="BookIm\9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="icoon\main.png" />
+    <Resource Include="icoon\admin.png" />
+    <Resource Include="icoon\autor.png" />
+    <Resource Include="icoon\book.png" />
+    <Resource Include="icoon\error.png" />
+    <Resource Include="icoon\prof.png" />
+    <Resource Include="icoon\spesk.png" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
