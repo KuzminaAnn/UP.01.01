@@ -20,8 +20,8 @@ namespace UP._01._01
         public Nullable<int> IdBook { get; set; }
         public string Text { get; set; }
     
+        public virtual Book Book { get; set; }
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }
-        public virtual Book Book { get; set; }
     }
 }

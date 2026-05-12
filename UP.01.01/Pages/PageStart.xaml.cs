@@ -44,5 +44,16 @@ namespace UP._01._01.Pages
             }
 
         }
+
+        private void Podrob_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Book selectBook = btn.DataContext as Book;
+            NavigationService.Navigate(new PagePodrob(selectBook));
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
+        }
     }
 }

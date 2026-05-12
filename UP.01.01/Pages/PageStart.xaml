@@ -22,7 +22,7 @@
             <TextBox x:Name="Poisc" FontSize="20" Foreground="#1F4E5F" Margin="10" Background="White" Height="30" Width="490" HorizontalAlignment="Center" TextChanged="Poisc_TextChanged"/>
             <ComboBox x:Name="Filtr" Height="30" Width="115" Margin="10" HorizontalAlignment="Right"/>
         </StackPanel>
-
+        
         <ListBox x:Name="BookBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
             <ListBox.ItemTemplate >
                 <DataTemplate>
@@ -33,7 +33,7 @@
                             <TextBlock TextWrapping="Wrap" Text="{Binding User.Name}" FontSize="15"/>
                             <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
                         </StackPanel>
-                        <Button x:Name="Podrob" Content="Подробнее" Width="130" Height="40" FontSize="20"/>
+                        <Button x:Name="Podrob" Content="Подробнее" Width="130" Height="40" FontSize="20" Click="Podrob_Click"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

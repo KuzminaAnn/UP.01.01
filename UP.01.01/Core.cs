@@ -8,6 +8,6 @@ namespace UP._01._01
 {
     internal class Core
     {
-        public static kuza_upEntities Context = new kuza_upEntities();
+        public static kuza_upEntities1 Context = new kuza_upEntities1();
     }
 }
