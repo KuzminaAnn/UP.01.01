@@ -8,6 +8,6 @@ namespace UP._01._01
 {
     internal class AffUser
     {
-        public static User Auser = null;
+        public static User Auser { set; get; }
     }
 }

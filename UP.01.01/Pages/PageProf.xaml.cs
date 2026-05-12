@@ -13,12 +13,22 @@ namespace UP._01._01.Pages
         public PageProf()
         {
             InitializeComponent();
+        }
+
+        private void Load()
+        {
             if (AffUser.Auser != null)
             {
                 NameUser.Text = AffUser.Auser.Name;
                 Login.Text = AffUser.Auser.Login;
+                Email.Text = AffUser.Auser.Email;
             }
 
+        }
+
+        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Load();
         }
     }
 }

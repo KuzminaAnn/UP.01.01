@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Navigation;
+using UP._01._01.Pages;
 
 namespace UP._01._01
 {
@@ -15,30 +17,19 @@ namespace UP._01._01
 
         private void MainBook_Click(object sender, RoutedEventArgs e)
         {
-            navframe.Visibility = Visibility.Visible;
-            navframe1.Visibility = Visibility.Hidden;
-            navframe2.Visibility = Visibility.Hidden;
-            navframe3.Visibility = Visibility.Hidden;
-            navframe4.Visibility = Visibility.Hidden;
+            navframe.Navigate(new PageStart());
+            if (navframe.CanGoForward)
+            {
+                navframe.GoForward();
+            }
         }
 
         private void BookSpesk_Click(object sender, RoutedEventArgs e)
         {
-            if (AffUser.Auser == null)
+            navframe.Navigate(new PageSpesk());
+            if (navframe.CanGoForward)
             {
-                navframe4.Visibility = Visibility.Visible;
-                navframe2.Visibility = Visibility.Hidden;
-                navframe.Visibility = Visibility.Hidden;
-                navframe1.Visibility = Visibility.Hidden;
-                navframe3.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                navframe1.Visibility = Visibility.Visible;
-                navframe.Visibility = Visibility.Hidden;
-                navframe2.Visibility = Visibility.Hidden;
-                navframe3.Visibility = Visibility.Hidden;
-                navframe4.Visibility = Visibility.Hidden;
+                navframe.GoForward();
             }
         }
 
@@ -46,19 +37,19 @@ namespace UP._01._01
         {
             if (AffUser.Auser == null)
             {
-                navframe3.Visibility = Visibility.Visible;
-                navframe2.Visibility = Visibility.Hidden;
-                navframe.Visibility = Visibility.Hidden;
-                navframe1.Visibility = Visibility.Hidden;
-                navframe4.Visibility = Visibility.Hidden;
+                navframe.Navigate(new PageAffuser());
+                if (navframe.CanGoForward)
+                {
+                    navframe.GoForward();
+                }
             }
             else
             {
-                navframe2.Visibility = Visibility.Visible;
-                navframe.Visibility = Visibility.Hidden;
-                navframe1.Visibility = Visibility.Hidden;
-                navframe3.Visibility = Visibility.Hidden;
-                navframe4.Visibility = Visibility.Hidden;
+                navframe.Navigate(new PageProf());
+                if (navframe.CanGoForward)
+                {
+                    navframe.GoForward();
+                }
             }
 
         }

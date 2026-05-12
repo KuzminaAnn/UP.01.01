@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:UP._01._01.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageProf">
+      Title="PageProf" 
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -19,11 +20,14 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="NameUser" TextWrapping="Wrap" Text="{Binding Name}" FontSize="50" Margin="10" Grid.Row="0"/>
+        <TextBlock x:Name="NameUser" TextWrapping="Wrap" FontSize="50" Margin="10" Grid.Row="0"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <TextBlock Text="Логин:" FontSize="30" Margin="10"/>
-            <TextBlock x:Name="Login" TextWrapping="Wrap" Text="{Binding Login}" FontSize="30" Margin="10" Grid.Row="0"/>
-            <TextBlock x:Name="Уьфшд" TextWrapping="Wrap" Text="{Binding Email}" FontSize="30" Margin="10" Grid.Row="0"/>
+            <TextBlock Text="Логин:" FontSize="25" Margin="10"/>
+            <TextBlock x:Name="Login" TextWrapping="Wrap" FontSize="25" Margin="10" Grid.Row="0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <TextBlock Text="Почта:" FontSize="25" Margin="10"/>
+            <TextBlock x:Name="Email" TextWrapping="Wrap" FontSize="25" Margin="10" Grid.Row="0"/>
         </StackPanel>
     </Grid>
 </Page>
