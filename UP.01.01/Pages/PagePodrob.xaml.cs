@@ -63,5 +63,14 @@ namespace UP._01._01.Pages
                 NavigationService.GoForward();
             }
         }
+
+        private void Ban_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageBan(book));
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
+        }
     }
 }
