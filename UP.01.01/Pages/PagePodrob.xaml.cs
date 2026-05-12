@@ -72,5 +72,14 @@ namespace UP._01._01.Pages
                 NavigationService.GoForward();
             }
         }
+
+        private void Revies_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageReview(book));
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
+        }
     }
 }

@@ -111,6 +111,9 @@
     <Compile Include="Pages\PageReg.xaml.cs">
       <DependentUpon>PageReg.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageReview.xaml.cs">
+      <DependentUpon>PageReview.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageSpesk.xaml.cs">
       <DependentUpon>PageSpesk.xaml</DependentUpon>
     </Compile>
@@ -168,6 +171,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageReg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageReview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

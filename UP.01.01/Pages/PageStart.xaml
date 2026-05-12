@@ -33,7 +33,11 @@
                             <TextBlock TextWrapping="Wrap" Text="{Binding User.Name}" FontSize="15"/>
                             <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
                         </StackPanel>
-                        <Button x:Name="Podrob" Content="Подробнее" Width="130" Height="40" FontSize="20" Click="Podrob_Click"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="Podrob" Content="Подробнее" Width="130" Height="40" FontSize="20" Click="Podrob_Click" Margin="5"/>
+                            <Button x:Name="Spisk" Content="Добавить" Width="130" Height="40" FontSize="20" Click="Spisk_Click" Margin="5"/>
+                        </StackPanel>
+                        
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
