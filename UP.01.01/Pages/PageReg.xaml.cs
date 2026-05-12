@@ -23,6 +23,7 @@ namespace UP._01._01.Pages
         public PageReg()
         {
             InitializeComponent();
+           
         }
 
         private void Regist_Click(object sender, RoutedEventArgs e)
