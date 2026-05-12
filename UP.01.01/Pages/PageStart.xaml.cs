@@ -33,6 +33,7 @@ namespace UP._01._01.Pages
             else
             {
                 BookBox.ItemsSource = book.Where(d => d.Name.ToLower().Contains(Poisc.Text.ToLower())).ToList();
+                //BookBox.ItemsSource = book.Where(d => d.User.Name.ToLower().Contains(Poisc.Text.ToLower())).ToList();
             }
 
         }

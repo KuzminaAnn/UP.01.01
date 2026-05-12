@@ -13,6 +13,10 @@ namespace UP._01._01
         public MainWindow()
         {
             InitializeComponent();
+            if (AffUser.Auser.IdRole == 1)
+            {
+                Admin.Visibility = Visibility.Visible;
+            }
         }
 
         private void MainBook_Click(object sender, RoutedEventArgs e)
@@ -26,10 +30,21 @@ namespace UP._01._01
 
         private void BookSpesk_Click(object sender, RoutedEventArgs e)
         {
-            navframe.Navigate(new PageSpesk());
-            if (navframe.CanGoForward)
+            if (AffUser.Auser == null)
             {
-                navframe.GoForward();
+                navframe.Navigate(new PageNoSpisk());
+                if (navframe.CanGoForward)
+                {
+                    navframe.GoForward();
+                }
+            }
+            else
+            {
+                navframe.Navigate(new PageSpesk());
+                if (navframe.CanGoForward)
+                {
+                    navframe.GoForward();
+                }
             }
         }
 
@@ -52,6 +67,15 @@ namespace UP._01._01
                 }
             }
 
+        }
+
+        private void Admin_Click(object sender, RoutedEventArgs e)
+        {
+            navframe.Navigate(new PageAdmin());
+            if (navframe.CanGoForward)
+            {
+                navframe.GoForward();
+            }
         }
     }
 }

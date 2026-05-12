@@ -29,5 +29,29 @@
             <TextBlock Text="Почта:" FontSize="25" Margin="10"/>
             <TextBlock x:Name="Email" TextWrapping="Wrap" FontSize="25" Margin="10" Grid.Row="0"/>
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <TextBlock Text="Роль:" FontSize="25" Margin="10"/>
+            <TextBlock x:Name="Role" TextWrapping="Wrap" FontSize="25" Margin="10" Grid.Row="0"/>
+        </StackPanel>
+
+        <TextBlock Text="Отзывы:" FontSize="25" Margin="10" Grid.Row="4"/>
+        <ListBox x:Name="UserRev" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="5" Background="#F4F7F7">
+            <ListBox.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel Margin="25, 15" Orientation="Vertical">
+                        <StackPanel Margin="5" HorizontalAlignment="Center" Width="600">
+                            <TextBlock TextWrapping="NoWrap" Text="{Binding Book.Name}" FontSize="20"/>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Text}" FontSize="15"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </Page>
