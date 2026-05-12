@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace UP._01._01.Pages
 {
@@ -20,9 +8,17 @@ namespace UP._01._01.Pages
     /// </summary>
     public partial class PageProf : Page
     {
+        List<User> users;
+        public User user { get; set; }
         public PageProf()
         {
             InitializeComponent();
+            if (AffUser.Auser != null)
+            {
+                NameUser.Text = AffUser.Auser.Name;
+                Login.Text = AffUser.Auser.Login;
+            }
+
         }
     }
 }

@@ -102,6 +102,9 @@
     <Compile Include="Pages\PageBan.xaml.cs">
       <DependentUpon>PageBan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageNoSpisk.xaml.cs">
+      <DependentUpon>PageNoSpisk.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PagePodrob.xaml.cs">
       <DependentUpon>PagePodrob.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageNoSpisk.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

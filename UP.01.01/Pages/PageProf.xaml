@@ -9,6 +9,21 @@
       Title="PageProf">
 
     <Grid>
-        <TextBlock Text="profffffff" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="NameUser" TextWrapping="Wrap" Text="{Binding Name}" FontSize="50" Margin="10" Grid.Row="0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="Логин:" FontSize="30" Margin="10"/>
+            <TextBlock x:Name="Login" TextWrapping="Wrap" Text="{Binding Login}" FontSize="30" Margin="10" Grid.Row="0"/>
+            <TextBlock x:Name="Уьфшд" TextWrapping="Wrap" Text="{Binding Email}" FontSize="30" Margin="10" Grid.Row="0"/>
+        </StackPanel>
     </Grid>
 </Page>

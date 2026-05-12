@@ -19,14 +19,27 @@ namespace UP._01._01
             navframe1.Visibility = Visibility.Hidden;
             navframe2.Visibility = Visibility.Hidden;
             navframe3.Visibility = Visibility.Hidden;
+            navframe4.Visibility = Visibility.Hidden;
         }
 
         private void BookSpesk_Click(object sender, RoutedEventArgs e)
         {
-            navframe1.Visibility = Visibility.Visible;
-            navframe.Visibility = Visibility.Hidden;
-            navframe2.Visibility = Visibility.Hidden;
-            navframe3.Visibility = Visibility.Hidden;
+            if (AffUser.Auser == null)
+            {
+                navframe4.Visibility = Visibility.Visible;
+                navframe2.Visibility = Visibility.Hidden;
+                navframe.Visibility = Visibility.Hidden;
+                navframe1.Visibility = Visibility.Hidden;
+                navframe3.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                navframe1.Visibility = Visibility.Visible;
+                navframe.Visibility = Visibility.Hidden;
+                navframe2.Visibility = Visibility.Hidden;
+                navframe3.Visibility = Visibility.Hidden;
+                navframe4.Visibility = Visibility.Hidden;
+            }
         }
 
         private void UserProf_Click(object sender, RoutedEventArgs e)
@@ -37,6 +50,7 @@ namespace UP._01._01
                 navframe2.Visibility = Visibility.Hidden;
                 navframe.Visibility = Visibility.Hidden;
                 navframe1.Visibility = Visibility.Hidden;
+                navframe4.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -44,6 +58,7 @@ namespace UP._01._01
                 navframe.Visibility = Visibility.Hidden;
                 navframe1.Visibility = Visibility.Hidden;
                 navframe3.Visibility = Visibility.Hidden;
+                navframe4.Visibility = Visibility.Hidden;
             }
 
         }

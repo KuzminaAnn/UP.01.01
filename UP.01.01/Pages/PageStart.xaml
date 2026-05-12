@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UP._01._01.Pages"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageStart">
 
@@ -22,7 +22,7 @@
             <TextBox x:Name="Poisc" FontSize="20" Foreground="#1F4E5F" Margin="10" Background="White" Height="30" Width="490" HorizontalAlignment="Center" TextChanged="Poisc_TextChanged"/>
             <ComboBox x:Name="Filtr" Height="30" Width="115" Margin="10" HorizontalAlignment="Right"/>
         </StackPanel>
-        
+
         <ListBox x:Name="BookBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
             <ListBox.ItemTemplate >
                 <DataTemplate>
@@ -35,9 +35,14 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="Podrob" Content="Подробнее" Width="130" Height="40" FontSize="20" Click="Podrob_Click" Margin="5"/>
-                            <Button x:Name="Spisk" Content="Добавить" Width="130" Height="40" FontSize="20" Click="Spisk_Click" Margin="5"/>
+                            <ComboBox Width="130" Height="40">
+                                <Button x:Name="Plan" Content="В планах" Width="130" Height="40" FontSize="20"/>
+                                <Button x:Name="Bros" Content="Заброшено" Width="130" Height="40" FontSize="20"/>
+                                <Button x:Name="Read" Content="Читаю" Width="130" Height="40" FontSize="20"/>
+                                <Button x:Name="Ok" Content="Прочитано" Width="130" Height="40" FontSize="20"/>
+                            </ComboBox>
                         </StackPanel>
-                        
+
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
