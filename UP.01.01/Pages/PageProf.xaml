@@ -34,8 +34,12 @@
             <TextBlock x:Name="Role" TextWrapping="Wrap" FontSize="25" Margin="10" Grid.Row="0"/>
         </StackPanel>
 
-        <TextBlock Text="Отзывы:" FontSize="25" Margin="10" Grid.Row="4"/>
-        <ListBox x:Name="UserRev" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="5" Background="#F4F7F7">
+        <TextBlock x:Name="Fr" Text="Ваш профиль заморожен по решению администратора. Перейдите на странице заморозки и оставьте заявку на отмену заморозки" FontSize="25" Grid.Row="4" Margin="10" TextWrapping="Wrap" Visibility="Collapsed"/>
+
+        <Button x:Name="Autor" Content="Подать заявку на автора" Grid.Row="5" HorizontalAlignment="Center" FontSize="25" Margin="5" Width="290" Click="Autor_Click" Visibility="Visible"/>
+
+        <TextBlock Text="Отзывы:" FontSize="25" Margin="10" Grid.Row="6"/>
+        <ListBox x:Name="UserRev" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="7" Background="#F4F7F7">
             <ListBox.ItemTemplate >
                 <DataTemplate>
                     <StackPanel Margin="25, 15" Orientation="Vertical">

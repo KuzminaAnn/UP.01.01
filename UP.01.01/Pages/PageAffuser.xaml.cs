@@ -45,7 +45,6 @@ namespace UP._01._01.Pages
             else
             {
                 MessageBox.Show("Неверный пароль");
-
             }
         }
 

@@ -102,8 +102,14 @@
     <Compile Include="Pages\PageAffuser.xaml.cs">
       <DependentUpon>PageAffuser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageAtour.xaml.cs">
+      <DependentUpon>PageAtour.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageBan.xaml.cs">
       <DependentUpon>PageBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageFreez.xaml.cs">
+      <DependentUpon>PageFreez.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageNoSpisk.xaml.cs">
       <DependentUpon>PageNoSpisk.xaml</DependentUpon>
@@ -168,7 +174,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageAtour.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageFreez.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

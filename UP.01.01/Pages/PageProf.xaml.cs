@@ -28,6 +28,12 @@ namespace UP._01._01.Pages
                 Role.Text = AffUser.Auser.Role.Name;
                 reviews = Core.Context.Review.Where(g => g.IdUser == AffUser.Auser.Id).ToList();
                 UserRev.ItemsSource = reviews;
+
+                if (AffUser.Auser.Freez == true)
+                {
+                    Fr.Visibility = System.Windows.Visibility.Visible;
+                    Autor.Visibility = System.Windows.Visibility.Collapsed;
+                }
             }
 
         }
@@ -35,6 +41,15 @@ namespace UP._01._01.Pages
         private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             Load();
+        }
+
+        private void Autor_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageFreez());
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
         }
     }
 }

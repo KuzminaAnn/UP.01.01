@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Navigation;
 using UP._01._01.Pages;
 
 namespace UP._01._01
@@ -13,10 +12,24 @@ namespace UP._01._01
         public MainWindow()
         {
             InitializeComponent();
-            if (AffUser.Auser.IdRole == 1)
+
+            if (AffUser.Auser != null)
             {
-                Admin.Visibility = Visibility.Visible;
+                if (AffUser.Auser.IdRole == 1)
+                {
+                    Admin.Visibility = Visibility.Visible;
+                }
+                if (AffUser.Auser.IdRole == 2)
+                {
+                    Autor.Visibility = Visibility.Visible;
+                }
+                if (AffUser.Auser.Freez == true)
+                {
+                    Freez.Visibility = Visibility.Visible;
+                }
             }
+
+            Load();
         }
 
         private void MainBook_Click(object sender, RoutedEventArgs e)
@@ -76,6 +89,30 @@ namespace UP._01._01
             {
                 navframe.GoForward();
             }
+        }
+
+        private void Autor_Click(object sender, RoutedEventArgs e)
+        {
+            navframe.Navigate(new PageAtour());
+            if (navframe.CanGoForward)
+            {
+                navframe.GoForward();
+            }
+        }
+
+        private void Freez_Click(object sender, RoutedEventArgs e)
+        {
+            navframe.Navigate(new PageFreez());
+            if (navframe.CanGoForward)
+            {
+                navframe.GoForward();
+            }
+        }
+
+        private void Load()
+        {
+
+
         }
     }
 }

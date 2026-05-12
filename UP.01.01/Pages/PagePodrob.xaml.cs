@@ -39,6 +39,14 @@ namespace UP._01._01.Pages
             BookBox.ItemsSource = books;
             reviews = Core.Context.Review.Where(g => g.IdBook == book.Id).ToList();
             Revie.ItemsSource = reviews;
+
+            if (AffUser.Auser != null)
+            {
+                if (AffUser.Auser.IdRole == 1)
+                {
+                    Freez.Visibility = Visibility.Visible; 
+                }
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -80,6 +88,11 @@ namespace UP._01._01.Pages
             {
                 NavigationService.GoForward();
             }
+        }
+
+        private void Freez_Click(object sender, RoutedEventArgs e)
+        {
+            book.Freez = true;
         }
     }
 }

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:UP._01._01"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80"/>
@@ -47,7 +48,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Autor" Width="60" Height="50" Margin="2" Visibility="Collapsed">
+            <Button x:Name="Autor" Width="60" Height="50" Margin="2" Visibility="Collapsed" Click="Autor_Click">
                 <Image Source="/icoon/autor.png"/>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -55,7 +56,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Freez" Width="60" Height="50" Margin="2" Visibility="Collapsed">
+            <Button x:Name="Freez" Width="60" Height="50" Margin="2" Visibility="Collapsed" Click="Freez_Click">
                 <Image Source="/icoon/error.png"/>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
