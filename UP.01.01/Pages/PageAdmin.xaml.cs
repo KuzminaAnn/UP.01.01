@@ -32,22 +32,27 @@ namespace UP._01._01.Pages
         public PageAdmin()
         {
             InitializeComponent();
+            Load();
         }
         private void Load()
         {
             if (AffUser.Auser != null)
             {
                 NameAdmin.Text = AffUser.Auser.Name;
+                Applic.ItemsSource = null;
                 Applic.ItemsSource = applications;
+                Comp.ItemsSource = null;
                 Comp.ItemsSource = complaints;
+                Bok.ItemsSource = null;
                 Bok.ItemsSource = books;
+                Usr.ItemsSource = null;
                 Usr.ItemsSource = users;
             }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            Load();
+            //Load();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -56,7 +61,7 @@ namespace UP._01._01.Pages
             Applications sApp = btn.DataContext as Applications;
             //Applications removeApplications = Core.Context.Applications.First(u => u.Id = sApp.Id);
 
-            //Core.Context.Applications.Remove(removeApplications); 
+            //Core.Context.Applications.Remove(sApp);
             //Core.Context.SaveChanges();
         }
 
@@ -81,14 +86,16 @@ namespace UP._01._01.Pages
         {
             Button b = sender as Button;
             User RoleUser = b.DataContext as User;
-            if (RoleUser.IdRole == 1)
+            if (RoleUser.IdRole == 3)
             {
                 RoleUser.IdRole = 2;
+                Core.Context.SaveChanges();
                 Load();
             }
             else if (RoleUser.IdRole == 2)
             {
-                RoleUser.IdRole = 1;
+                RoleUser.IdRole = 3;
+                Core.Context.SaveChanges();
                 Load();
             }
         }
