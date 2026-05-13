@@ -12,24 +12,37 @@ namespace UP._01._01
         public MainWindow()
         {
             InitializeComponent();
+            //Admin.Visibility = Visibility.Collapsed; 
+            //Autor.Visibility = Visibility.Collapsed;
+            //if (AffUser.Auser != null)
+            //{
 
-            if (AffUser.Auser != null)
-            {
-                if (AffUser.Auser.IdRole == 1)
-                {
-                    Admin.Visibility = Visibility.Visible;
-                }
-                if (AffUser.Auser.IdRole == 2)
-                {
-                    Autor.Visibility = Visibility.Visible;
-                }
-                if (AffUser.Auser.Freez == true)
-                {
-                    Freez.Visibility = Visibility.Visible;
-                }
-            }
+                
+            //    switch (AffUser.Auser.IdRole)
+            //    {
+            //        case 1:
+            //            Admin.Visibility = Visibility.Visible;
+            //            break;
 
-            Load();
+            //        case 2:
+            //            Autor.Visibility = Visibility.Visible;
+            //            break;
+            //    }
+                //        if (AffUser.Auser.IdRole == 1)
+                //{
+                //    Admin.Visibility = Visibility.Visible;
+                //}
+                //if (AffUser.Auser.IdRole == 2)
+                //{
+                //    Autor.Visibility = Visibility.Visible;
+                //}
+                //if (AffUser.Auser.Freez == true)
+                //{
+                //    Freez.Visibility = Visibility.Visible;
+                //}
+            //}
+
+            //Load();
         }
 
         private void MainBook_Click(object sender, RoutedEventArgs e)

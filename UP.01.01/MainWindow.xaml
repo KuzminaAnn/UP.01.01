@@ -9,13 +9,13 @@
     
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="95"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
         <Image Source="/icoon/main.png" Height="70" Width="70" VerticalAlignment="Top" Margin="0, 10, 0, 0"/>
 
-        <ListBox x:Name="sidebar" Grid.Column="0" BorderThickness="0" Margin="0, 90, 0, 60">
+        <ListBox x:Name="sidebar" Grid.Column="0" BorderThickness="0" Margin="0, 90, 0, 0">
             <Button x:Name="MainBook" Width="60" Height="50" Margin="2" Click="MainBook_Click">
                 <Image Source="/icoon/book.png"/>
                 <Button.Template>
@@ -40,7 +40,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Admin" Width="60" Height="50" Margin="2" Visibility="Collapsed" Click="Admin_Click">
+            <Button x:Name="Admin" Width="60" Height="50" Margin="2" Click="Admin_Click">
                 <Image Source="/icoon/admin.png"/>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -48,7 +48,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Autor" Width="60" Height="50" Margin="2" Visibility="Collapsed" Click="Autor_Click">
+            <Button x:Name="Autor" Width="60" Height="50" Margin="2" Click="Autor_Click">
                 <Image Source="/icoon/autor.png"/>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -56,7 +56,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Freez" Width="60" Height="50" Margin="2" Visibility="Collapsed" Click="Freez_Click">
+            <Button x:Name="Freez" Width="60" Height="50" Margin="2" Click="Freez_Click">
                 <Image Source="/icoon/error.png"/>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">

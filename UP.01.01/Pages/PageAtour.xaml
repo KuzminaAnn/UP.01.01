@@ -6,9 +6,57 @@
       xmlns:local="clr-namespace:UP._01._01.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageAtour">
+      Title="PageAtour"
+      Loaded="Page_Loaded">
 
     <Grid>
-        <TextBlock Text="autor"/>
+        <ScrollViewer>
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="NameAutor" TextWrapping="Wrap" FontSize="50" Margin="10" Grid.Row="0"/>
+                    <StackPanel Grid.Row="1" Orientation="Vertical">
+                        <TextBlock Text="Если ваша книга заморожена, то оставьте заявку с названием книги" TextWrapping="Wrap" FontSize="30" Margin="10"/>
+                        <Button x:Name="Freez" Content="Подача заявки" FontSize="20" Height="30" Width="150" Margin="5" Click="Freez_Click"/>
+                    </StackPanel>
+                    <TextBlock Text="Список книг" TextWrapping="Wrap" FontSize="30" Margin="10" Grid.Row="2"/>
+                    <ListBox x:Name="BookBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="3" Background="#F4F7F7">
+                        <ListBox.ItemTemplate >
+                            <DataTemplate>
+                                <StackPanel Margin="25, 15" Orientation="Vertical">
+                                    <Image Height="300" Width="250" Source="{Binding Image}"/>
+                                    <StackPanel Margin="5" HorizontalAlignment="Center" Width="250">
+                                        <TextBlock TextWrapping="NoWrap" Text="{Binding Name}" FontSize="20"/>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock TextWrapping="Wrap" Text="Рейтинг: " FontSize="15"/>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock TextWrapping="Wrap" Text="Заморозка: " FontSize="15"/>
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding Freez}" FontSize="15"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <Button x:Name="Red" Content="Редактировать" Width="140" Height="40" FontSize="20" Margin="5"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
