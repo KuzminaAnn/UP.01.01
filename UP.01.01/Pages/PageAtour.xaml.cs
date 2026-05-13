@@ -52,5 +52,14 @@ namespace UP._01._01.Pages
                 NavigationService.GoForward();
             }
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageAddBook());
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
+        }
     }
 }

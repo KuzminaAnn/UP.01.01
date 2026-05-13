@@ -20,9 +20,14 @@ namespace UP._01._01.Pages
     /// </summary>
     public partial class PageSpesk : Page
     {
+        List<Book> books = Core.Context.Book.ToList();
         public PageSpesk()
         {
             InitializeComponent();
+            BookZabr.ItemsSource = books;
+            BookPlan.ItemsSource = books;
+            BookRead.ItemsSource = books;
+            BookOkRead.ItemsSource = books;
         }
 
     }
