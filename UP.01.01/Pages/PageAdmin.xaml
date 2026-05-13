@@ -10,42 +10,121 @@
       Loaded="Page_Loaded">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <TextBlock x:Name="NameAdmin" TextWrapping="Wrap" FontSize="50" Margin="10" Grid.Row="0"/>
-        <TabControl Grid.Row="1" TabStripPlacement="Top" Margin="5">
-            <TabItem x:Name="Applications" Header="Заявка" FontSize="25" Height="35" Width="100">
+        <ScrollViewer>
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="NameAdmin" TextWrapping="Wrap" FontSize="50" Margin="10" Grid.Row="0"/>
+                    <TabControl Grid.Row="1" TabStripPlacement="Top" Margin="5">
+                        <TabItem x:Name="Applications" Header="Заявка" FontSize="25" Height="35" Width="100">
 
-                <ListBox x:Name="Applic" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="7" Background="#F4F7F7">
-                    <ListBox.ItemTemplate >
-                        <DataTemplate>
-                            <StackPanel Margin="5, 2" Orientation="Vertical">
-                                <StackPanel Margin="1" HorizontalAlignment="Center" Width="600">
-                                    <TextBlock TextWrapping="NoWrap" Text="{Binding User.Name}" FontSize="20"/>
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding Status}" FontSize="15"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
-            </TabItem>
-            <TabItem x:Name="Complaint" Header="Жалоба" FontSize="25" Height="35" Width="100">
+                            <ListBox x:Name="Applic" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="7" Background="#F4F7F7">
+                                <ListBox.ItemTemplate >
+                                    <DataTemplate>
+                                        <StackPanel Margin="5, 2" Orientation="Horizontal">
+                                            <StackPanel Margin="1" HorizontalAlignment="Center" Width="600">
+                                                <TextBlock TextWrapping="NoWrap" Text="{Binding User.Name}" FontSize="20"/>
+                                                <TextBlock TextWrapping="Wrap" Text="{Binding Status}" FontSize="15"/>
+                                            </StackPanel>
+                                            <Button Content="Удалить" FontSize="20" Height="30" Width="85" Margin="5" Click="Button_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                            </ListBox>
+                        </TabItem>
+                        <TabItem x:Name="Complaint" Header="Жалоба" FontSize="25" Height="35" Width="100" VerticalAlignment="Bottom">
 
-            </TabItem>
-            <TabItem x:Name="Book" Header="Книги" FontSize="25" Height="35" Width="100">
+                            <ListBox x:Name="Comp" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="7" Background="#F4F7F7">
+                                <ListBox.ItemTemplate >
+                                    <DataTemplate>
+                                        <StackPanel Margin="5, 2" Orientation="Horizontal">
+                                            <StackPanel Margin="1" HorizontalAlignment="Center" Width="600">
+                                                <TextBlock TextWrapping="NoWrap" Text="{Binding User.Name}" FontSize="20"/>
+                                                <TextBlock TextWrapping="NoWrap" Text="{Binding IdAuthor}" FontSize="20"/>
+                                                <TextBlock TextWrapping="NoWrap" Text="{Binding Book.Name}" FontSize="20"/>
+                                                <TextBlock TextWrapping="Wrap" Text="{Binding Text}" FontSize="15"/>
+                                            </StackPanel>
+                                            <Button Content="Удалить" FontSize="20" Height="30" Width="85" Margin="5" Click="Button_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                            </ListBox>
+                        </TabItem>
+                        <TabItem x:Name="Book" Header="Книги" FontSize="25" Height="35" Width="100">
 
-            </TabItem>
-            <TabItem x:Name="User" Header="Потльзователи" FontSize="25" Height="35" Width="190">
+                            <ListBox x:Name="Bok" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="7" Background="#F4F7F7">
+                                <ListBox.ItemTemplate >
+                                    <DataTemplate>
+                                        <StackPanel Margin="5, 2" Orientation="Horizontal">
+                                            <StackPanel Margin="1" HorizontalAlignment="Center" Width="600">
+                                                <TextBlock TextWrapping="NoWrap" Text="{Binding Name}" FontSize="20"/>
+                                                <TextBlock TextWrapping="NoWrap" Text="{Binding User.Name}" FontSize="20"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock TextWrapping="Wrap" Text="Рейтинг: " FontSize="15"/>
+                                                    <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock TextWrapping="Wrap" Text="Заморозка: " FontSize="15"/>
+                                                    <TextBlock TextWrapping="Wrap" Text="{Binding Freez}" FontSize="15"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <Button x:Name="Freez"  Content="Заморозка" FontSize="20" Height="30" Width="110  " Margin="5" Click="Freez_Click"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                            </ListBox>
+                        </TabItem>
+                        <TabItem x:Name="User" Header="Потльзователи" FontSize="25" Height="35" Width="190">
 
-            </TabItem>
-        </TabControl>
+                            <ListBox x:Name="Usr" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="7" Background="#F4F7F7">
+                                <ListBox.ItemTemplate >
+                                    <DataTemplate>
+                                        <StackPanel Margin="5, 2" Orientation="Horizontal">
+                                            <StackPanel Margin="1" HorizontalAlignment="Center" Width="600">
+                                                <TextBlock TextWrapping="NoWrap" Text="{Binding Name}" FontSize="20"/>
+                                                <TextBlock TextWrapping="NoWrap" Text="{Binding Role.Name}" FontSize="20"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock TextWrapping="Wrap" Text="Заморозка: " FontSize="15"/>
+                                                    <TextBlock TextWrapping="Wrap" Text="{Binding Freez}" FontSize="15"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button x:Name="Fez"  Content="Заморозка" FontSize="20" Height="30" Width="110" Margin="5" Click="Fez_Click"/>
+                                                <Button x:Name="Rol"  Content="Роль" FontSize="20" Height="30" Width="110  " Margin="5" Click="Rol_Click"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                            </ListBox>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+        
     </Grid>
 </Page>
