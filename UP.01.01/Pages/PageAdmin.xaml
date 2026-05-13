@@ -6,9 +6,46 @@
       xmlns:local="clr-namespace:UP._01._01.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageAdmin">
+      Title="PageAdmin"
+      Loaded="Page_Loaded">
 
     <Grid>
-        <TextBlock Text="admin" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="NameAdmin" TextWrapping="Wrap" FontSize="50" Margin="10" Grid.Row="0"/>
+        <TabControl Grid.Row="1" TabStripPlacement="Top" Margin="5">
+            <TabItem x:Name="Applications" Header="Заявка" FontSize="25" Height="35" Width="100">
+
+                <ListBox x:Name="Applic" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="7" Background="#F4F7F7">
+                    <ListBox.ItemTemplate >
+                        <DataTemplate>
+                            <StackPanel Margin="5, 2" Orientation="Vertical">
+                                <StackPanel Margin="1" HorizontalAlignment="Center" Width="600">
+                                    <TextBlock TextWrapping="NoWrap" Text="{Binding User.Name}" FontSize="20"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding Status}" FontSize="15"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+            </TabItem>
+            <TabItem x:Name="Complaint" Header="Жалоба" FontSize="25" Height="35" Width="100">
+
+            </TabItem>
+            <TabItem x:Name="Book" Header="Книги" FontSize="25" Height="35" Width="100">
+
+            </TabItem>
+            <TabItem x:Name="User" Header="Потльзователи" FontSize="25" Height="35" Width="190">
+
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>

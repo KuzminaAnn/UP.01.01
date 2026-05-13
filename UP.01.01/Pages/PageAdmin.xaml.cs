@@ -20,9 +20,30 @@ namespace UP._01._01.Pages
     /// </summary>
     public partial class PageAdmin : Page
     {
+        List<User> users;
+        List<Applications> applications = Core.Context.Applications.ToList();
+        List<Complaint> complaints = Core.Context.Complaint.ToList();
+        List<Book> books = Core.Context.Book.ToList();
+        public User user { get; set; }
+        public Applications application { get; set; }
+        public Complaint complaint { get; set; }
+        public Book book { get; set; }
         public PageAdmin()
         {
             InitializeComponent();
+        }
+        private void Load()
+        {
+            if (AffUser.Auser != null)
+            {
+                NameAdmin.Text = AffUser.Auser.Name;
+                Applic.ItemsSource = applications;
+            }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Load();
         }
     }
 }

@@ -34,6 +34,8 @@ namespace UP._01._01.Pages
                     Fr.Visibility = System.Windows.Visibility.Visible;
                     Autor.Visibility = System.Windows.Visibility.Collapsed;
                 }
+                if (AffUser.Auser.IdRole == 2 | AffUser.Auser.IdRole == 1)
+                    Autor.Visibility = System.Windows.Visibility.Collapsed;
             }
 
         }
