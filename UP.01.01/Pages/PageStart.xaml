@@ -18,9 +18,9 @@
 
         <TextBlock Text="Читай, Пиши и не спиши" FontSize="35" FontWeight="Medium" Grid.Row="0" HorizontalAlignment="Center"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <ComboBox x:Name="Sort" Height="30" Width="115" Margin="10" HorizontalAlignment="Left"/>
+            <ComboBox x:Name="Sort" Height="30" Width="150" Margin="10" HorizontalAlignment="Left" SelectionChanged="Sort_SelectionChanged" FontSize="20"/>
             <TextBox x:Name="Poisc" FontSize="20" Foreground="#1F4E5F" Margin="10" Background="White" Height="30" Width="490" TextChanged="Poisc_TextChanged"/>
-            <ComboBox x:Name="Filtr" Height="30" Width="115" Margin="10" HorizontalAlignment="Right"/>
+            <ComboBox x:Name="Filtr" FontSize="20" DisplayMemberPath="Name" Height="30" Width="150" Margin="10" HorizontalAlignment="Right" SelectionChanged="Filtr_SelectionChanged"/>
         </StackPanel>
 
         <ListBox x:Name="BookBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">

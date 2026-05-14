@@ -13,15 +13,62 @@ namespace UP._01._01.Pages
     public partial class PageStart : Page
     {
         List<Book> book = Core.Context.Book.ToList();
+        List<Gener> gener = Core.Context.Gener.ToList();
+        public Book books { get; set; }
         public PageStart()
         {
+
             InitializeComponent();
             Load();
+
+            List<Sortir> ssort = new List<Sortir>()
+            {
+                new Sortir
+                {
+                    Name = "По названию",
+                },
+                new Sortir
+                {
+                    Name = "По рейтингу",
+                },
+                new Sortir
+                {
+                    Name = "Фильтрация",
+                }
+            };
+            Sort.ItemsSource = ssort;
+            Sort.DisplayMemberPath = "Name";
+            Sort.SelectedIndex = 2;
+
+
+            //List<Gener> gen = new List<Gener>()
+            //{
+            //    new Gener
+            //    {
+            //        Name = "Фильтрация"
+            //    }
+            //};
+
+            //foreach (var d in bookgen)
+            //{
+            //    if (gen.Any(m => m.Id == d.IdBook))
+            //    {
+            //        continue;
+            //    }
+            //    gen.Add(d.Gener);
+            //}
+
+            //Sort.ItemsSource = null;
+            //Sort.SelectedIndex = 0;
+            //Sort.ItemsSource = gen.Select(s => s.Name);
+
         }
         private void Load()
         {
             BookBox.ItemsSource = null;
             BookBox.ItemsSource = book;
+            Filtr.ItemsSource = null;
+            Filtr.ItemsSource = gener;
 
         }
         private void Poisc_TextChanged(object sender, TextChangedEventArgs e)
@@ -54,6 +101,37 @@ namespace UP._01._01.Pages
         private void Spisk_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Sort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Sort.SelectedIndex == 0)
+            {
+                BookBox.ItemsSource = null;
+                BookBox.ItemsSource = Core.Context.Book.OrderBy(f => f.Name).ToList();
+            }
+            else if (Sort.SelectedIndex == 1)
+            {
+                BookBox.ItemsSource = null;
+                BookBox.ItemsSource = Core.Context.Book.OrderByDescending(r => r.Rating).ToList();
+            }
+            else
+            { }
+        }
+
+        private void Filtr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedGenre = Filtr.SelectedItem as Gener;
+
+            if (selectedGenre == null)
+            {
+                BookBox.ItemsSource = book;
+                return;
+            }
+
+            var filteredBooks = book.Where(b => b.BookGener.Any(bg => bg.IdGener == selectedGenre.Id)).ToList();
+
+            BookBox.ItemsSource = filteredBooks;
         }
     }
 }
