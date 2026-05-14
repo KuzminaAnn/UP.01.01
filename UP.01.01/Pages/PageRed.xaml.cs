@@ -16,17 +16,26 @@ using System.Windows.Shapes;
 namespace UP._01._01.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PageAddBook.xaml
+    /// Логика взаимодействия для PageRed.xaml
     /// </summary>
-    public partial class PageAddBook : Page
+    public partial class PageRed : Page
     {
+        List<Book> books;
         List<Gener> gener = Core.Context.Gener.ToList();
-        public PageAddBook()
+        public Book book { get; set; }
+        public PageRed(Book b)
         {
             InitializeComponent();
+            book = b;
+            this.DataContext = this;
+
+            Name.Text = book.Name;
+            Desc.Text = book.Description;
+            Image.Text = book.Image;
             Genr.ItemsSource = gener;
-            
+
         }
+
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new PageAtour());
@@ -38,31 +47,20 @@ namespace UP._01._01.Pages
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            Book newBook = new Book
+            if (Name.Text != book.Name)
             {
-                Name = Name.Text,
-                Description = Desc.Text,
-                Image = Image.Text,
-                IdAuthor = AffUser.Auser.Id,
-                Rating = 0,
-                Freez = false
-            };
-            Core.Context.Book.Add(newBook);
-            Core.Context.SaveChanges();
-            var selectedGenre = Genr.SelectedItem as Gener;
-
-            BookGener link = new BookGener
+                book.Name = Name.Text;
+                Core.Context.SaveChanges();
+            }
+            if (Desc.Text != book.Description)
             {
-                IdBook = newBook.Id, 
-                IdGener = selectedGenre.Id
-            };
-            Core.Context.BookGener.Add(link);
-            Core.Context.SaveChanges();
-            MessageBox.Show("Книга добавлена!");
-            NavigationService.Navigate(new PageAtour());
-            if (NavigationService.CanGoForward)
+                book.Description = Desc.Text;
+                Core.Context.SaveChanges();
+            }
+            if (Image.Text != book.Image)
             {
-                NavigationService.GoForward();
+                book.Image = Image.Text;
+                Core.Context.SaveChanges();
             }
         }
     }

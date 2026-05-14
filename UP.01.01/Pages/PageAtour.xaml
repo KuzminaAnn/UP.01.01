@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UP._01._01.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="2039.1" d:DesignWidth="826.4"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="PageAtour"
       Loaded="Page_Loaded">
 
@@ -45,7 +45,7 @@
                                             <TextBlock TextWrapping="Wrap" Text="{Binding Freez}" FontSize="15"/>
                                         </StackPanel>
                                     </StackPanel>
-                                    <Button x:Name="Red" Content="Редактировать" Width="140" Height="40" FontSize="20" Margin="5"/>
+                                    <Button x:Name="Red" Content="Редактировать" Width="140" Height="40" FontSize="20" Margin="5" Click="Red_Click"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

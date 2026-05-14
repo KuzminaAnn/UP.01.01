@@ -41,27 +41,6 @@ namespace UP._01._01.Pages
             Sort.SelectedIndex = 2;
 
 
-            //List<Gener> gen = new List<Gener>()
-            //{
-            //    new Gener
-            //    {
-            //        Name = "Фильтрация"
-            //    }
-            //};
-
-            //foreach (var d in bookgen)
-            //{
-            //    if (gen.Any(m => m.Id == d.IdBook))
-            //    {
-            //        continue;
-            //    }
-            //    gen.Add(d.Gener);
-            //}
-
-            //Sort.ItemsSource = null;
-            //Sort.SelectedIndex = 0;
-            //Sort.ItemsSource = gen.Select(s => s.Name);
-
         }
         private void Load()
         {

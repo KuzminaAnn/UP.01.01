@@ -61,5 +61,16 @@ namespace UP._01._01.Pages
                 NavigationService.GoForward();
             }
         }
+
+        private void Red_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Book selectBook = btn.DataContext as Book;
+            NavigationService.Navigate(new PageRed(selectBook));
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
+        }
     }
 }
