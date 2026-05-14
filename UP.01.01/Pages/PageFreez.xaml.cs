@@ -45,6 +45,13 @@ namespace UP._01._01.Pages
             Core.Context.Applications.Add(newApplications);
             Core.Context.SaveChanges();
             MessageBox.Show("Заявка отправлена");
+
+            NavigationService.Navigate(new PageProf());
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
         }
+
     }
 }

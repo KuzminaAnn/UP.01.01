@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a152c0d6c36d4fe4bc195cb502d88379" Name="Diagram1">
+        <EntityTypeShape EntityType="kuza_upModel.Applications" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.Book" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.BookGener" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.Complaint" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.Gener" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.Review" Width="1.5" PointX="10.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.Role" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.Status" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.User" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kuza_upModel.UserBook" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="kuza_upModel.FK_Applications_User" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_Book_User" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_Book_Gener_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_Complaint_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_Review_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_User_Book_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_Book_Gener_Gener" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_Complaint_User" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_Complaint_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_Review_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_User_Book_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="kuza_upModel.FK_User_Book_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

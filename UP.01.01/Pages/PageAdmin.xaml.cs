@@ -60,6 +60,7 @@ namespace UP._01._01.Pages
         {
             Button btn = sender as Button;
             Applications sApp = btn.DataContext as Applications;
+            Applications app = Core.Context.Applications.FirstOrDefault(a => a.);
 
             Core.Context.Applications.Remove(sApp);
             Core.Context.SaveChanges();
