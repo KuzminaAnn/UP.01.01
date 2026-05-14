@@ -25,7 +25,7 @@ namespace UP._01._01.Pages
         {
             InitializeComponent();
             Genr.ItemsSource = gener;
-            
+            GenreList.ItemsSource = gener;
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
@@ -38,6 +38,8 @@ namespace UP._01._01.Pages
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
+            //var selectedGenre = Genr.SelectedItem as Gener;
+            var selectedGenres = GenreList.SelectedItems.Cast<Gener>().ToList();
             Book newBook = new Book
             {
                 Name = Name.Text,
@@ -47,17 +49,22 @@ namespace UP._01._01.Pages
                 Rating = 0,
                 Freez = false
             };
+            foreach (var item in selectedGenres) 
+                newBook.BookGener.Add(
+                    new BookGener{
+                    IdBook = newBook.Id,
+                    IdGener = item.Id}
+                );
             Core.Context.Book.Add(newBook);
             Core.Context.SaveChanges();
-            var selectedGenre = Genr.SelectedItem as Gener;
 
-            BookGener link = new BookGener
-            {
-                IdBook = newBook.Id, 
-                IdGener = selectedGenre.Id
-            };
-            Core.Context.BookGener.Add(link);
-            Core.Context.SaveChanges();
+            //BookGener link = new BookGener
+            //{
+            //    IdBook = newBook.Id, 
+            //    IdGener = selectedGenre.Id
+            //};
+            //Core.Context.BookGener.Add(link);
+            //Core.Context.SaveChanges();
             MessageBox.Show("Книга добавлена!");
             NavigationService.Navigate(new PageAtour());
             if (NavigationService.CanGoForward)

@@ -62,6 +62,7 @@ namespace UP._01._01.Pages
                 book.Image = Image.Text;
                 Core.Context.SaveChanges();
             }
+
         }
     }
 }

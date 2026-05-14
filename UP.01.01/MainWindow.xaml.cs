@@ -8,39 +8,12 @@ namespace UP._01._01
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        User _upUser;
         public MainWindow()
         {
             InitializeComponent();
-            //Admin.Visibility = Visibility.Collapsed; 
-            //Autor.Visibility = Visibility.Collapsed;
-            //if (AffUser.Auser != null)
-            //{
-
-                
-            //    switch (AffUser.Auser.IdRole)
-            //    {
-            //        case 1:
-            //            Admin.Visibility = Visibility.Visible;
-            //            break;
-
-            //        case 2:
-            //            Autor.Visibility = Visibility.Visible;
-            //            break;
-            //    }
-                //        if (AffUser.Auser.IdRole == 1)
-                //{
-                //    Admin.Visibility = Visibility.Visible;
-                //}
-                //if (AffUser.Auser.IdRole == 2)
-                //{
-                //    Autor.Visibility = Visibility.Visible;
-                //}
-                //if (AffUser.Auser.Freez == true)
-                //{
-                //    Freez.Visibility = Visibility.Visible;
-                //}
-            //}
+            Admin.Visibility = Visibility.Collapsed;
+            Autor.Visibility = Visibility.Collapsed;
 
             //Load();
         }
@@ -126,6 +99,30 @@ namespace UP._01._01
         {
 
 
+        }
+
+        private void navframe_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            
+            if(_upUser == AffUser.Auser) return;
+            if (AffUser.Auser == null) return;
+            
+            _upUser = AffUser.Auser;
+            
+            if(_upUser.Freez == true) ;//
+
+            switch (AffUser.Auser.IdRole)
+            {
+                case 1:
+                    Admin.Visibility = Visibility.Visible;
+                    break;
+
+                case 2:
+                    Autor.Visibility = Visibility.Visible;
+                    break;
+            }
+
+            
         }
     }
 }

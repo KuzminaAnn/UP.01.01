@@ -25,7 +25,7 @@ namespace UP._01._01.Pages
                 NameUser.Text = AffUser.Auser.Name;
                 Login.Text = AffUser.Auser.Login;
                 Email.Text = AffUser.Auser.Email;
-                Role.Text = AffUser.Auser.Role.Name;
+                Role.Text = Core.Context.Role.FirstOrDefault(r=> r.Id == AffUser.Auser.IdRole).Name;
                 reviews = Core.Context.Review.Where(g => g.IdUser == AffUser.Auser.Id).ToList();
                 UserRev.ItemsSource = reviews;
 

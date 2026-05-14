@@ -67,6 +67,6 @@
             
         </ListBox>
 
-        <Frame x:Name="navframe" Grid.Column="1" Source="Pages/PageStart.xaml" NavigationUIVisibility="Hidden" Background="#F4F7F7" Visibility="Visible"/>
+        <Frame Navigated="navframe_Navigated" x:Name="navframe" Grid.Column="1" Source="Pages/PageStart.xaml" NavigationUIVisibility="Hidden" Background="#F4F7F7" Visibility="Visible"/>
     </Grid>
 </Window>

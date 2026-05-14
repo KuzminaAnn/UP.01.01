@@ -39,14 +39,11 @@ namespace UP._01._01.Pages
             };
             Core.Context.User.Add(newUser);
             Core.Context.SaveChanges();
-            User reguser = newUser;
-            AffUser.Auser = reguser;
+            
+            AffUser.Auser = newUser;
             MessageBox.Show("Вы зарегистрировались!");
             NavigationService.Navigate(new PageProf());
-            if (NavigationService.CanGoForward)
-            {
-                NavigationService.GoForward();
-            }
+            
         }
     }
 }

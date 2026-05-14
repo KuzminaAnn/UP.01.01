@@ -11,18 +11,29 @@ namespace UP._01._01
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Book
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Book()
         {
-            this.BookGener = new HashSet<BookGener>();
             this.Complaint = new HashSet<Complaint>();
             this.Review = new HashSet<Review>();
             this.UserBook = new HashSet<UserBook>();
+            this.BookGener = new HashSet<BookGener>();
         }
-    
+
+        public string AthtorName
+        {
+            get
+            {
+                var g = Core.Context.User.FirstOrDefault(u => u.Id == IdAuthor);
+                if (g != null) return g.Name;
+                return null;
+            }
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -33,12 +44,12 @@ namespace UP._01._01
     
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BookGener> BookGener { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Complaint> Complaint { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Review> Review { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserBook> UserBook { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BookGener> BookGener { get; set; }
     }
 }

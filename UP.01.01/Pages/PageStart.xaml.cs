@@ -69,7 +69,9 @@ namespace UP._01._01.Pages
         {
             Button btn = sender as Button;
             Book selectBook = btn.DataContext as Book;
-            NavigationService.Navigate(new PagePodrob(selectBook));
+            NavigationService.Navigate(new LookBookPage(selectBook));
+
+            //NavigationService.Navigate(new PagePodrob(selectBook));
             if (NavigationService.CanGoForward)
             {
                 NavigationService.GoForward();

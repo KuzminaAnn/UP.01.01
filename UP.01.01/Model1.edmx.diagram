@@ -15,20 +15,20 @@
         <EntityTypeShape EntityType="kuza_upModel1.User" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="kuza_upModel1.UserBook" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="kuza_upModel1.Applications" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="kuza_upModel1.BookGener" Width="1.5" PointX="10.5" PointY="3.5" IsExpanded="true" />
         <AssociationConnector Association="kuza_upModel1.FK_Book_User" ManuallyRouted="false" />
-        <AssociationConnector Association="kuza_upModel1.FK_Book_Gener_Book" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_Complaint_Book" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_Review_Book" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_User_Book_Book" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_Complaint_User" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_Complaint_User1" ManuallyRouted="false" />
-        <AssociationConnector Association="kuza_upModel1.FK_Book_Gener_Gener" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_Review_User1" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_User_Role" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_User_Book_Status" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_Applications_User" ManuallyRouted="false" />
         <AssociationConnector Association="kuza_upModel1.FK_User_Book_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="kuza_upModel1.BookGener" Width="1.5" PointX="10.5" PointY="4" />
+        <AssociationConnector Association="kuza_upModel1.FK_Book_Gener_Book" />
+        <AssociationConnector Association="kuza_upModel1.FK_Book_Gener_Gener" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

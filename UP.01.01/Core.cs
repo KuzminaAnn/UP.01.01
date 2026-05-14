@@ -11,3 +11,16 @@ namespace UP._01._01
         public static kuza_upEntities1 Context = new kuza_upEntities1();
     }
 }
+
+namespace UP._01._01
+{
+    public partial class Book
+    {
+        //public string AthtorName { get {
+        //        var g = Core.Context.User.FirstOrDefault(u=>u.Id == IdAuthor);
+        //        if (g != null) return g.Name;
+        //        return null;
+        //    }
+        //}
+    }
+}

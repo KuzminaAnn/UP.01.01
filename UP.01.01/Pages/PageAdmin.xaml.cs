@@ -48,6 +48,7 @@ namespace UP._01._01.Pages
                 Usr.ItemsSource = null;
                 Usr.ItemsSource = users;
             }
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -59,10 +60,9 @@ namespace UP._01._01.Pages
         {
             Button btn = sender as Button;
             Applications sApp = btn.DataContext as Applications;
-            //Applications removeApplications = Core.Context.Applications.First(u => u.Id = sApp.Id);
 
-            //Core.Context.Applications.Remove(sApp);
-            //Core.Context.SaveChanges();
+            Core.Context.Applications.Remove(sApp);
+            Core.Context.SaveChanges();
         }
 
         private void Freez_Click(object sender, RoutedEventArgs e)
@@ -115,6 +115,16 @@ namespace UP._01._01.Pages
                 editUser.Freez = false;
                 Load();
             }
+        }
+
+        private void Applic_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Button bt = sender as Button;
+            if (bt != null) {
+                Core.Context.Applications.Remove(bt.DataContext as Applications);
+                Sve
+            }
+
         }
     }
 }
