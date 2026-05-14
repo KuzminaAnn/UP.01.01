@@ -58,12 +58,12 @@ namespace UP._01._01.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
-            Applications sApp = btn.DataContext as Applications;
-            Applications app = Core.Context.Applications.FirstOrDefault(a => a.);
+            //Button btn = sender as Button;
+            //Applications sApp = btn.DataContext as Applications;
+            //Applications app = Core.Context.Applications.FirstOrDefault(a => a.Id = sApp.Id);
 
-            Core.Context.Applications.Remove(sApp);
-            Core.Context.SaveChanges();
+            //Core.Context.Applications.Remove(sApp);
+            //Core.Context.SaveChanges();
         }
 
         private void Freez_Click(object sender, RoutedEventArgs e)
