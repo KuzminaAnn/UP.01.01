@@ -34,7 +34,6 @@
         </StackPanel>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Выберите жанр: " FontSize="25" Margin="15, 10"/>
-            <ComboBox x:Name="Genr" Width="300" Height="35" Margin="15, 10" FontSize="25" DisplayMemberPath="Name"/>
             <ListBox x:Name="GenreList" SelectionMode="Multiple">
                 <ListBox.ItemTemplate>
                     <DataTemplate>

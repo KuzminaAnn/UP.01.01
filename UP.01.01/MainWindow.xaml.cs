@@ -14,6 +14,7 @@ namespace UP._01._01
             InitializeComponent();
             Admin.Visibility = Visibility.Collapsed;
             Autor.Visibility = Visibility.Collapsed;
+            Freez.Visibility = Visibility.Collapsed;
 
             //Load();
         }
@@ -103,26 +104,29 @@ namespace UP._01._01
 
         private void navframe_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
         {
-            
-            if(_upUser == AffUser.Auser) return;
+
+            if (_upUser == AffUser.Auser) return;
             if (AffUser.Auser == null) return;
-            
+
             _upUser = AffUser.Auser;
-            
-            if(_upUser.Freez == true) ;//
 
-            switch (AffUser.Auser.IdRole)
+            if (_upUser.Freez != true)
             {
-                case 1:
-                    Admin.Visibility = Visibility.Visible;
-                    break;
+                switch (AffUser.Auser.IdRole)
+                {
+                    case 1:
+                        Admin.Visibility = Visibility.Visible;
+                        break;
 
-                case 2:
-                    Autor.Visibility = Visibility.Visible;
-                    break;
+                    case 2:
+                        Autor.Visibility = Visibility.Visible;
+                        break;
+                }
             }
 
-            
+
+
+
         }
     }
 }

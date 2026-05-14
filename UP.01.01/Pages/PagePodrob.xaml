@@ -26,20 +26,26 @@
                     <TextBlock x:Name="NameBook" TextWrapping="Wrap" Text="{Binding Name}" FontSize="50" Margin="5" Grid.Row="0"/>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <TextBlock x:Name="ganre" FontSize="20" Foreground="#215756" HorizontalAlignment="Left" Width="200" Height="30" Margin="15, 5"/>
+                        <!--<ListBox x:Name="GenreList" Margin="5" Width="200" ItemsSource="{Binding BookGener}" SelectionMode="Extended">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Gener.Name}"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>-->
                         <Button x:Name="Freez" Content="Заморозить" Width="150" Height="30" FontSize="20" HorizontalAlignment="Right" Visibility="Collapsed" Click="Freez_Click"/>
                     </StackPanel>
                     <ListBox x:Name="BookBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=1}" Grid.Row="2" Background="#F4F7F7">
                         <ListBox.ItemTemplate >
                             <DataTemplate>
-                                <StackPanel Margin="25, 15" Orientation="Vertical">
-                                    <Image Height="300" Width="250" Source="{Binding Image}" Margin="5"/>
-                                    <StackPanel Margin="5" HorizontalAlignment="Center" Width="250">
-                                        <TextBlock TextWrapping="Wrap" Text="{Binding User.Name}" FontSize="15"/>
-                                        <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
-                                    </StackPanel>
-
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding Description}" Grid.Row="2" FontSize="20"/>
-                                </StackPanel>
+                    <StackPanel Margin="25, 15" Orientation="Vertical">
+                        <Image Height="300" Width="250" Source="{Binding Image}" Margin="5"/>
+                        <StackPanel Margin="5" HorizontalAlignment="Center" Width="250">
+                            <TextBlock TextWrapping="Wrap" Text="{Binding User.Name}" FontSize="15"/>
+                            <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
+                        </StackPanel>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Description}" Grid.Row="2" FontSize="20"/>
+                    </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                         <ListBox.ItemsPanel>
@@ -57,7 +63,7 @@
                     </StackPanel>
 
                     <ListBox x:Name="Revie" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=1}" Grid.Row="5" Background="#F4F7F7">
-                        <ListBox.ItemTemplate >
+                        <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Margin="25, 15" Orientation="Vertical">
                                     <StackPanel Margin="5" HorizontalAlignment="Center" Width="800">

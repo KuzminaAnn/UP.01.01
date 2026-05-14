@@ -122,7 +122,7 @@ namespace UP._01._01.Pages
             Button bt = sender as Button;
             if (bt != null) {
                 Core.Context.Applications.Remove(bt.DataContext as Applications);
-                Sve
+                Core.Context.SaveChanges();
             }
 
         }

@@ -24,7 +24,6 @@ namespace UP._01._01.Pages
         public PageAddBook()
         {
             InitializeComponent();
-            Genr.ItemsSource = gener;
             GenreList.ItemsSource = gener;
         }
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -58,13 +57,6 @@ namespace UP._01._01.Pages
             Core.Context.Book.Add(newBook);
             Core.Context.SaveChanges();
 
-            //BookGener link = new BookGener
-            //{
-            //    IdBook = newBook.Id, 
-            //    IdGener = selectedGenre.Id
-            //};
-            //Core.Context.BookGener.Add(link);
-            //Core.Context.SaveChanges();
             MessageBox.Show("Книга добавлена!");
             NavigationService.Navigate(new PageAtour());
             if (NavigationService.CanGoForward)

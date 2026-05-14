@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,23 +30,31 @@ namespace UP._01._01.Pages
 
         private void Aff_Click(object sender, RoutedEventArgs e)
         {
-            User afuser = users.First(U => U.Login.ToLower() == login.Text.ToLower());
-
-            string password = Password.Password;
-            if (afuser.Password == password)
+            if (login.Text == null || Password.Password == null)
             {
-                AffUser.Auser = afuser;
-                MessageBox.Show("Вы вошли в свой аккаунт!");
-                NavigationService.Navigate(new PageProf());
-                if (NavigationService.CanGoForward)
+                MessageBox.Show("Заполните поля!");
+            }
+            else if (login.Text != null && Password.Password != null)
+            {
+                User afuser = users.First(U => U.Login.ToLower() == login.Text.ToLower());
+
+                string password = Password.Password;
+                if (afuser.Password == password)
                 {
-                    NavigationService.GoForward();
+                    AffUser.Auser = afuser;
+                    MessageBox.Show("Вы вошли в свой аккаунт!");
+                    NavigationService.Navigate(new PageProf());
+                    if (NavigationService.CanGoForward)
+                    {
+                        NavigationService.GoForward();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Неверный пароль");
                 }
             }
-            else
-            {
-                MessageBox.Show("Неверный пароль");
-            }
+            
         }
 
         private void Registr_Click(object sender, RoutedEventArgs e)
