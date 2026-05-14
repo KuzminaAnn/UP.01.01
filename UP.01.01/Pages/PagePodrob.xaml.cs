@@ -20,16 +20,15 @@ namespace UP._01._01.Pages
         public PagePodrob(Book b)
         {
             InitializeComponent();
-            this.book = book;
-            DataContext = book;
+            book = b;
+            this.DataContext = this;
             foreach (var a in book.BookGener)
                 ganre.Text = a.Gener.Name;
             books = Core.Context.Book.Where(g => g.Id == book.Id).ToList();
             NameBook.Text = book.Name;
-            BookBox.ItemsSource = book;
+            BookBox.ItemsSource = books;
             reviews = Core.Context.Review.Where(g => g.IdBook == book.Id).ToList();
             Revie.ItemsSource = reviews;
-
 
             if (AffUser.Auser != null)
             {
