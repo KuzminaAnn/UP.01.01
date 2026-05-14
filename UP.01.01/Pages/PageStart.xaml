@@ -17,9 +17,9 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Читай, Пиши и не спиши" FontSize="35" FontWeight="Medium" Grid.Row="0" HorizontalAlignment="Center"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <ComboBox x:Name="Sort" Height="30" Width="115" Margin="10" HorizontalAlignment="Left"/>
-            <TextBox x:Name="Poisc" FontSize="20" Foreground="#1F4E5F" Margin="10" Background="White" Height="30" Width="490" HorizontalAlignment="Center" TextChanged="Poisc_TextChanged"/>
+            <TextBox x:Name="Poisc" FontSize="20" Foreground="#1F4E5F" Margin="10" Background="White" Height="30" Width="490" TextChanged="Poisc_TextChanged"/>
             <ComboBox x:Name="Filtr" Height="30" Width="115" Margin="10" HorizontalAlignment="Right"/>
         </StackPanel>
 

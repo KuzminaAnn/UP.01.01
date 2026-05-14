@@ -32,8 +32,9 @@ namespace UP._01._01.Pages
             }
             else
             {
-                BookBox.ItemsSource = book.Where(d => d.Name.ToLower().Contains(Poisc.Text.ToLower())).ToList();
-                //BookBox.ItemsSource = book.Where(d => d.User.Name.ToLower().Contains(Poisc.Text.ToLower())).ToList();
+                var byName = book.Where(d => d.Name.ToLower().Contains(Poisc.Text.ToLower()));
+                var byAuthor = book.Where(d => d.User.Name.ToLower().Contains(Poisc.Text.ToLower()));
+                BookBox.ItemsSource = byName.Union(byAuthor).ToList();
             }
 
         }
