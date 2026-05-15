@@ -44,7 +44,7 @@ namespace UP._01._01.Pages
                 NavigationService.Navigate(new PagePodrob(selectBook));
             
         }
-        private void BookPlan1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void BookPlan_MouseDoubleClick1(object sender, MouseButtonEventArgs e)
         {
 
             Book selectBook = BookZabr.SelectedItem as Book;
@@ -52,7 +52,7 @@ namespace UP._01._01.Pages
                 NavigationService.Navigate(new PagePodrob(selectBook));
 
         }
-        private void BookPlan2_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void BookPlan_MouseDoubleClick2(object sender, MouseButtonEventArgs e)
         {
 
             Book selectBook = BookRead.SelectedItem as Book;
@@ -60,7 +60,7 @@ namespace UP._01._01.Pages
                 NavigationService.Navigate(new PagePodrob(selectBook));
 
         }
-        private void BookPlan3_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void BookPlan_MouseDoubleClick3(object sender, MouseButtonEventArgs e)
         {
 
             Book selectBook = BookOkRead.SelectedItem as Book;

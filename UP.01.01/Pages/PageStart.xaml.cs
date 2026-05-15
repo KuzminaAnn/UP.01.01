@@ -46,7 +46,7 @@ namespace UP._01._01.Pages
         private void Load()
         {
             BookBox.ItemsSource = null;
-            BookBox.ItemsSource = book;
+            BookBox.ItemsSource = book.Where(a => a.Freez != true);
             Filtr.ItemsSource = null;
             Filtr.ItemsSource = gener;
 

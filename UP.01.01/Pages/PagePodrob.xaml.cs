@@ -11,8 +11,8 @@ namespace UP._01._01.Pages
     /// </summary>
     public partial class PagePodrob : Page
     {
-        List<Book> books;
-        List<Review> reviews = Core.Context.Review.ToList();
+        //List<Book> books;
+        List<Review> reviews ;
 
         public Book book { get; set; }
         public BookGener genreb { get; set; }
@@ -22,11 +22,11 @@ namespace UP._01._01.Pages
             InitializeComponent();
             book = b;
             this.DataContext = this;
-            foreach (var a in book.BookGener)
-                ganre.Text = a.Gener.Name;
-            books = Core.Context.Book.Where(g => g.Id == book.Id).ToList();
-            NameBook.Text = book.Name;
-            BookBox.ItemsSource = books;
+            //foreach (var a in book.BookGener)
+            //    ganre.Text = a.Gener.Name;
+            //books = Core.Context.Book.Where(g => g.Id == book.Id).ToList();
+            //NameBook.Text = book.Name;
+            //BookBox.ItemsSource = books;
             reviews = Core.Context.Review.Where(g => g.IdBook == book.Id).ToList();
             Revie.ItemsSource = reviews;
 

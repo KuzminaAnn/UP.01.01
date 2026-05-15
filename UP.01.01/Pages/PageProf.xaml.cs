@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace UP._01._01.Pages
@@ -52,6 +53,14 @@ namespace UP._01._01.Pages
             {
                 NavigationService.GoForward();
             }
+        }
+
+        private void Exet_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (AffUser.Auser != null)
+                AffUser.Auser = null;
+            MessageBox.Show("Вы вышли из аккаунта!");
+            NavigationService.Navigate(new PageStart());
         }
     }
 }

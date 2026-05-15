@@ -106,7 +106,10 @@ namespace UP._01._01
         {
 
             if (_upUser == AffUser.Auser) return;
-            if (AffUser.Auser == null) return;
+            if (AffUser.Auser == null) {
+                Admin.Visibility = Visibility.Collapsed;
+                Autor.Visibility = Visibility.Collapsed;
+                return; }
 
             _upUser = AffUser.Auser;
 
