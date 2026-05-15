@@ -14,6 +14,7 @@ namespace UP._01._01.Pages
         //List<Book> books;
         List<Review> reviews ;
 
+        //<!--MaxWidth="1000"-->
         public Book book { get; set; }
         public BookGener genreb { get; set; }
         public Review review { get; set; }
