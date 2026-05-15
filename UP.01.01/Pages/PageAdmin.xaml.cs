@@ -22,8 +22,8 @@ namespace UP._01._01.Pages
     public partial class PageAdmin : Page
     {
         List<User> users = Core.Context.User.ToList();
-        List<Applications> applications = Core.Context.Applications.ToList();
-        List<Complaint> complaints = Core.Context.Complaint.ToList();
+        List<Applications> applications;
+        List<Complaint> complaints;
         List<Book> books = Core.Context.Book.ToList();
         public User user { get; set; }
         public Applications application { get; set; }
@@ -39,13 +39,15 @@ namespace UP._01._01.Pages
             if (AffUser.Auser != null)
             {
                 NameAdmin.Text = AffUser.Auser.Name;
+                applications = Core.Context.Applications.ToList();
+                complaints = Core.Context.Complaint.ToList();
                 Applic.ItemsSource = null;
-                Applic.ItemsSource = applications;
                 Comp.ItemsSource = null;
-                Comp.ItemsSource = complaints;
                 Bok.ItemsSource = null;
-                Bok.ItemsSource = books;
                 Usr.ItemsSource = null;
+                Applic.ItemsSource = applications;
+                Comp.ItemsSource = complaints;
+                Bok.ItemsSource = books;
                 Usr.ItemsSource = users;
             }
 
@@ -53,17 +55,30 @@ namespace UP._01._01.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //Load();
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //Button btn = sender as Button;
-            //Applications sApp = btn.DataContext as Applications;
-            //Applications app = Core.Context.Applications.FirstOrDefault(a => a.Id = sApp.Id);
+            Button btn = sender as Button;
+            Applications sApp = btn.DataContext as Applications;
+            Applications app = Core.Context.Applications.FirstOrDefault(a => a.Id == sApp.Id);
 
-            //Core.Context.Applications.Remove(sApp);
-            //Core.Context.SaveChanges();
+            Core.Context.Applications.Remove(app);
+            Core.Context.SaveChanges();
+            Load(); 
+            MessageBox.Show("Успешно удалено");
+        }
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Complaint sApp = btn.DataContext as Complaint;
+            Complaint app = Core.Context.Complaint.FirstOrDefault(a => a.Id == sApp.Id);
+
+            Core.Context.Complaint.Remove(app);
+            Core.Context.SaveChanges();
+            Load();
+            MessageBox.Show("Успешно удалено");
         }
 
         private void Freez_Click(object sender, RoutedEventArgs e)

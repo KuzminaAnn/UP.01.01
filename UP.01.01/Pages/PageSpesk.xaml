@@ -21,7 +21,7 @@
                     <TabControl Grid.Row="1" TabStripPlacement="Top" Margin="5">
                         <TabItem x:Name="Zabr" Header="Заброшено" FontSize="25" Height="35" Width="150">
 
-                            <ListBox x:Name="BookZabr" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
+                            <ListBox MouseDoubleClick="BookPlan_MouseDoubleClick1" x:Name="BookZabr" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
                                 <ListBox.ItemTemplate >
                                     <DataTemplate>
                                         <StackPanel Margin="25, 15" Orientation="Vertical">
@@ -49,7 +49,7 @@
                         </TabItem>
                         <TabItem x:Name="Plan" Header="В планах" FontSize="25" Height="35" Width="120">
 
-                            <ListBox x:Name="BookPlan" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
+                            <ListBox MouseDoubleClick="BookPlan_MouseDoubleClick" x:Name="BookPlan" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
                                 <ListBox.ItemTemplate >
                                     <DataTemplate>
                                         <StackPanel Margin="25, 15" Orientation="Vertical">
@@ -81,7 +81,7 @@
                         </TabItem>
                         <TabItem x:Name="Read" Header="Читаю" FontSize="25" Height="35" Width="100">
 
-                            <ListBox x:Name="BookRead" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
+                            <ListBox MouseDoubleClick="BookPlan_MouseDoubleClick2" x:Name="BookRead" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
                                 <ListBox.ItemTemplate >
                                     <DataTemplate>
                                         <StackPanel Margin="25, 15" Orientation="Vertical">
@@ -110,7 +110,7 @@
                         </TabItem>
                         <TabItem x:Name="OkRead" Header="Прочитано" FontSize="25" Height="35" Width="150">
 
-                            <ListBox x:Name="BookOkRead" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
+                            <ListBox MouseDoubleClick="BookPlan_MouseDoubleClick3" x:Name="BookOkRead" ScrollViewer.HorizontalScrollBarVisibility="Disabled" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="2" Background="#F4F7F7">
                                 <ListBox.ItemTemplate >
                                     <DataTemplate>
                                         <StackPanel Margin="25, 15" Orientation="Vertical">

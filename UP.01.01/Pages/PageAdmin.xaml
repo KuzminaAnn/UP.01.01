@@ -53,7 +53,7 @@
                                                 <TextBlock TextWrapping="NoWrap" Text="{Binding Book.Name}" FontSize="20"/>
                                                 <TextBlock TextWrapping="Wrap" Text="{Binding Text}" FontSize="15"/>
                                             </StackPanel>
-                                            <Button Content="Удалить" FontSize="20" Height="30" Width="85" Margin="5" Click="Button_Click"/>
+                                            <Button Content="Удалить" FontSize="20" Height="30" Width="85" Margin="5" Click="Button1_Click"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
