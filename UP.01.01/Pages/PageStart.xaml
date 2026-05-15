@@ -36,10 +36,10 @@
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="Podrob" Content="Подробнее" Width="130" Height="40" FontSize="20" Click="Podrob_Click" Margin="5"/>
                             <ComboBox Width="130" Height="40">
-                                <Button x:Name="Plan" Content="В планах" Width="130" Height="40" FontSize="20"/>
-                                <Button x:Name="Bros" Content="Заброшено" Width="130" Height="40" FontSize="20"/>
-                                <Button x:Name="Read" Content="Читаю" Width="130" Height="40" FontSize="20"/>
-                                <Button x:Name="Ok" Content="Прочитано" Width="130" Height="40" FontSize="20"/>
+                                <Button x:Name="Plan" Content="В планах" Width="130" Height="40" FontSize="20" Click="Plan_Click"/>
+                                <Button x:Name="Bros" Content="Заброшено" Width="130" Height="40" FontSize="20" Click="Bros_Click"/>
+                                <Button x:Name="Read" Content="Читаю" Width="130" Height="40" FontSize="20" Click="Read_Click"/>
+                                <Button x:Name="Ok" Content="Прочитано" Width="130" Height="40" FontSize="20" Click="Ok_Click"/>
                             </ComboBox>
                         </StackPanel>
 

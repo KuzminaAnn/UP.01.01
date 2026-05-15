@@ -32,7 +32,7 @@ namespace UP._01._01.Pages
             Name.Text = book.Name;
             Desc.Text = book.Description;
             Image.Text = book.Image;
-            Genr.ItemsSource = gener;
+            GenreList.ItemsSource = gener;
 
         }
 
@@ -47,6 +47,7 @@ namespace UP._01._01.Pages
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
+            var selectedGenres = GenreList.SelectedItems.Cast<Gener>().ToList();
             if (Name.Text != book.Name)
             {
                 book.Name = Name.Text;
@@ -62,7 +63,21 @@ namespace UP._01._01.Pages
                 book.Image = Image.Text;
                 Core.Context.SaveChanges();
             }
-
+            foreach (var item in selectedGenres)
+                book.BookGener.Add(
+                    new BookGener
+                    {
+                        IdBook = book.Id,
+                        IdGener = item.Id
+                    }
+                );
+            Core.Context.SaveChanges();
+            MessageBox.Show("Изменения успешно сохранены!");
+            NavigationService.Navigate(new PageAtour());
+            if (NavigationService.CanGoForward)
+            {
+                NavigationService.GoForward();
+            }
         }
     }
 }

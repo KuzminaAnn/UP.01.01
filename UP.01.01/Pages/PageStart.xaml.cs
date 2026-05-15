@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,7 +34,7 @@ namespace UP._01._01.Pages
                 },
                 new Sortir
                 {
-                    Name = "Фильтрация",
+                    Name = "Сортировка",
                 }
             };
             Sort.ItemsSource = ssort;
@@ -113,6 +114,70 @@ namespace UP._01._01.Pages
             var filteredBooks = book.Where(b => b.BookGener.Any(bg => bg.IdGener == selectedGenre.Id)).ToList();
 
             BookBox.ItemsSource = filteredBooks;
+        }
+
+        private void Plan_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Book selectBook = btn.DataContext as Book;
+
+            UserBook newUserBook = new UserBook
+            {
+                IdUser = AffUser.Auser.Id,
+                IdBook = selectBook.Id,
+                IdStatus = 2
+            };
+            Core.Context.UserBook.Add(newUserBook);
+            Core.Context.SaveChanges();
+            MessageBox.Show("Добавлено в список");
+        }
+
+        private void Bros_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Book selectBook = btn.DataContext as Book;
+
+            UserBook newUserBook = new UserBook
+            {
+                IdUser = AffUser.Auser.Id,
+                IdBook = selectBook.Id,
+                IdStatus = 1
+            };
+            Core.Context.UserBook.Add(newUserBook);
+            Core.Context.SaveChanges();
+            MessageBox.Show("Добавлено в список");
+        }
+
+        private void Read_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Book selectBook = btn.DataContext as Book;
+
+            UserBook newUserBook = new UserBook
+            {
+                IdUser = AffUser.Auser.Id,
+                IdBook = selectBook.Id,
+                IdStatus = 3
+            };
+            Core.Context.UserBook.Add(newUserBook);
+            Core.Context.SaveChanges();
+            MessageBox.Show("Добавлено в список");
+        }
+
+        private void Ok_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            Book selectBook = btn.DataContext as Book;
+
+            UserBook newUserBook = new UserBook
+            {
+                IdUser = AffUser.Auser.Id,
+                IdBook = selectBook.Id,
+                IdStatus = 4
+            };
+            Core.Context.UserBook.Add(newUserBook);
+            Core.Context.SaveChanges();
+            MessageBox.Show("Добавлено в список");
         }
     }
 }
