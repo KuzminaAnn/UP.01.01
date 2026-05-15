@@ -32,10 +32,9 @@
                                                 <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
                                             </StackPanel>
                                             <ComboBox Width="130" Height="40">
-                                                <Button x:Name="Plan" Content="В планах" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Bros" Content="Заброшено" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Read" Content="Читаю" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Ok" Content="Прочитано" Width="130" Height="40" FontSize="20"/>
+                                                <Button x:Name="Plan" Content="В планах" Width="130" Height="40" FontSize="20" Click="Plan_Click"/>
+                                                <Button x:Name="Read" Content="Читаю" Width="130" Height="40" FontSize="20" Click="Read_Click"/>
+                                                <Button x:Name="Ok" Content="Прочитано" Width="130" Height="40" FontSize="20" Click="Ok_Click"/>
                                             </ComboBox>
                                         </StackPanel>
                                     </DataTemplate>
@@ -63,8 +62,7 @@
                                                 
                                             </StackPanel>
                                             <ComboBox Width="130" Height="40">
-                                                <Button x:Name="Plan" Content="В планах" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Bros" Content="Заброшено" Width="130" Height="40" FontSize="20"/>
+                                                <Button x:Name="Bros" Content="Заброшено" Width="130" Height="40" FontSize="20" Click="Bros_Click"/>
                                                 <Button x:Name="Read" Content="Читаю" Width="130" Height="40" FontSize="20"/>
                                                 <Button x:Name="Ok" Content="Прочитано" Width="130" Height="40" FontSize="20"/>
                                             </ComboBox>
@@ -92,10 +90,9 @@
                                                 <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
                                             </StackPanel>
                                             <ComboBox Width="130" Height="40">
-                                                <Button x:Name="Plan" Content="В планах" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Bros" Content="Заброшено" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Read" Content="Читаю" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Ok" Content="Прочитано" Width="130" Height="40" FontSize="20"/>
+                                                <Button x:Name="Plan2" Content="В планах" Width="130" Height="40" FontSize="20"/>
+                                                <Button x:Name="Bros2" Content="Заброшено" Width="130" Height="40" FontSize="20"/>
+                                                <Button x:Name="Ok2" Content="Прочитано" Width="130" Height="40" FontSize="20"/>
                                             </ComboBox>
 
                                         </StackPanel>
@@ -121,10 +118,9 @@
                                                 <TextBlock TextWrapping="Wrap" Text="{Binding Rating}" FontSize="15"/>
                                             </StackPanel>
                                             <ComboBox Width="130" Height="40">
-                                                <Button x:Name="Plan" Content="В планах" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Bros" Content="Заброшено" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Read" Content="Читаю" Width="130" Height="40" FontSize="20"/>
-                                                <Button x:Name="Ok" Content="Прочитано" Width="130" Height="40" FontSize="20"/>
+                                                <Button x:Name="Plan3" Content="В планах" Width="130" Height="40" FontSize="20"/>
+                                                <Button x:Name="Bros3" Content="Заброшено" Width="130" Height="40" FontSize="20"/>
+                                                <Button x:Name="Read3" Content="Читаю" Width="130" Height="40" FontSize="20"/>
                                             </ComboBox>
                                         </StackPanel>
                                     </DataTemplate>

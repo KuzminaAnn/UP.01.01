@@ -68,5 +68,48 @@ namespace UP._01._01.Pages
                 NavigationService.Navigate(new PagePodrob(selectBook));
 
         }
+
+        private void Plan_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            UserBook SenderUserBook = btn.DataContext as UserBook;
+
+            SenderUserBook.IdStatus = 2;
+            Core.Context.SaveChanges();
+
+            MessageBox.Show("Вы перенесли книгу в другой список");
+
+        }
+
+        private void Read_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            UserBook SenderUserBook = btn.DataContext as UserBook;
+
+            SenderUserBook.IdStatus = 3;
+            Core.Context.SaveChanges();
+
+            MessageBox.Show("Вы перенесли книгу в другой список");
+        }
+
+        private void Ok_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            UserBook SenderUserBook = btn.DataContext as UserBook;
+
+            SenderUserBook.IdStatus = 4;
+            Core.Context.SaveChanges();
+
+            MessageBox.Show("Вы перенесли книгу в другой список");
+        }
+
+        private void Bros_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            UserBook SenderUserBook = btn.DataContext as UserBook;
+
+            SenderUserBook.IdStatus = 1;
+            Core.Context.SaveChanges();
+        }
     }
 }
