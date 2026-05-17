@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace UP._01._01.Pages
 {
@@ -40,32 +30,38 @@ namespace UP._01._01.Pages
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            if (Autor.IsChecked == true)
+            if ((Autor.IsChecked == true && Text.Text != null) || (Book.IsChecked == true && Text.Text != null))
             {
-                Complaint newComplaint = new Complaint
+                if (Autor.IsChecked == true)
                 {
-                    IdUser = AffUser.Auser.Id,
-                    IdAuthor = book.IdAuthor,
-                    IdBook = null,
-                    Text = Text.Text
-                };
-                Core.Context.Complaint.Add(newComplaint);
-                Core.Context.SaveChanges();
-                MessageBox.Show("Жалоба отправлена");
-            }
-            else if (Book.IsChecked == true)
-            {
-                Complaint newComplaint = new Complaint
+                    Complaint newComplaint = new Complaint
+                    {
+                        IdUser = AffUser.Auser.Id,
+                        IdAuthor = book.IdAuthor,
+                        IdBook = null,
+                        Text = Text.Text
+                    };
+                    Core.Context.Complaint.Add(newComplaint);
+                    Core.Context.SaveChanges();
+                    MessageBox.Show("Жалоба отправлена");
+                }
+                else if (Book.IsChecked == true)
                 {
-                    IdUser = AffUser.Auser.Id,
-                    IdAuthor = null,
-                    IdBook = book.Id,
-                    Text = Text.Text
-                };
-                Core.Context.Complaint.Add(newComplaint);
-                Core.Context.SaveChanges();
-                MessageBox.Show("Жалоба отправлена");
+                    Complaint newComplaint = new Complaint
+                    {
+                        IdUser = AffUser.Auser.Id,
+                        IdAuthor = null,
+                        IdBook = book.Id,
+                        Text = Text.Text
+                    };
+                    Core.Context.Complaint.Add(newComplaint);
+                    Core.Context.SaveChanges();
+                    MessageBox.Show("Жалоба отправлена");
+                }
             }
+            else
+                MessageBox.Show("Заполните все поля!");
+
         }
     }
 }
